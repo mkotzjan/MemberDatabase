@@ -10,7 +10,7 @@
                 <MenuItem Header="Beenden"/>
             </MenuItem>
             <MenuItem Header="MITGLIEDER">
-                <MenuItem Header="Neues Mitglied"/>
+                <MenuItem Header="Neues Mitglied" Click="newMemberClick"/>
             </MenuItem>
             <MenuItem Header="?" >
                 <MenuItem Header="Hilfe"/>

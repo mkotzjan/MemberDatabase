@@ -9,9 +9,9 @@ namespace MemberDatabase
 {
     static class Member
     {
-        static void addMember()
+        public static void addMember()
         {
-
+            
         }
     }
 }
