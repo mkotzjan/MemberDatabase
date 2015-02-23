@@ -4,7 +4,7 @@
 winexe
 C#
 .cs
-C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\
 MemberDatabase
 none
 false
@@ -12,7 +12,7 @@ DEBUG;TRACE
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\App.xaml
 21523211464
 1-1342141996
-81401202955
+12-681694893
 13300257938
 AddMember.xaml;MainWindow.xaml;
 

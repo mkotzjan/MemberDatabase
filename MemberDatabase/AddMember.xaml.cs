@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,14 @@ namespace MemberDatabase
         public AddMember()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string sql = "insert into members (firstname, lastname, birthday, accession, graduation) values ('" + firstNameBox.Text + "', '" + lastNameBox.Text + "', 10, 12, '1. Dan')";
+            SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
+            command.ExecuteNonQuery();
+            this.Close();
         }
     }
 }

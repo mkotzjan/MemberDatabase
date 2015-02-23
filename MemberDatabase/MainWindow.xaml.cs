@@ -24,8 +24,8 @@ namespace MemberDatabase
     {
         public MainWindow()
         {
-            InitializeComponent();
             initializeDatabase();
+            InitializeComponent();
         }
 
         private void newMemberClick(object sender, RoutedEventArgs e)
@@ -40,14 +40,10 @@ namespace MemberDatabase
             if (!File.Exists("MyDatabase.sqlite"))
             {
                 SQLiteConnection.CreateFile("MyDatabase.sqlite");
-                SQLiteConnection m_dbConnection;
 
-                m_dbConnection = new SQLiteConnection("Data Source=MyDatabase.sqlite;Version=3;");
-                m_dbConnection.Open();
+                string sql = "create table members (firstname varchar(20) not null, lastname varchar(20) not null, birthday integer, accession integer, graduation varchar(20))";
 
-                string sql = "create table member (firstname varchar(20) not null, lastname varchar(20) not null, birthday integer, accession integer, graduation varchar(20))";
-
-                SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
+                SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
 
                 command.ExecuteNonQuery();
             }

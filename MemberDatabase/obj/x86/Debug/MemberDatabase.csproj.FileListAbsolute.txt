@@ -1,0 +1,17 @@
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\x86\Debug\MemberDatabase.exe.config
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\x86\Debug\MemberDatabase.exe
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\x86\Debug\MemberDatabase.pdb
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\x86\Debug\System.Data.SQLite.dll
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\x86\Debug\System.Data.SQLite.xml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\AddMember.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\MainWindow.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\AddMember.g.cs
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\App.g.cs
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\MemberDatabase_Content.g.cs
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\MemberDatabase_MarkupCompile.cache
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\MemberDatabase.g.resources
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\MemberDatabase.Properties.Resources.resources
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\MemberDatabase.csproj.GenerateResource.Cache
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\MemberDatabase.exe
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\MemberDatabase.pdb
