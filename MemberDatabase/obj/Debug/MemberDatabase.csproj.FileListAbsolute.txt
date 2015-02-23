@@ -11,3 +11,8 @@ C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Memb
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase.csproj.GenerateResource.Cache
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase.exe
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase.pdb
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase_Content.g.cs
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\Debug\System.Data.SQLite.dll
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\Debug\System.Data.SQLite.xml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\AddMember.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\AddMember.g.cs
