@@ -33,7 +33,6 @@ namespace MemberDatabase
         {
             AddMember addMember = new AddMember();
             addMember.ShowDialog();
-            Member.addMember();
         }
 
         private void initializeDatabase()
@@ -52,18 +51,7 @@ namespace MemberDatabase
 
         private void mainWindowLoaded(object sender, RoutedEventArgs e)
         {
-            string sql = "select * from members";
-            SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
-            command.ExecuteNonQuery();
-
-            SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(command);
-            DataTable dataTable = new DataTable("Mitglieder");
-
-            dataAdapter.Fill(dataTable);
-
-            DataGrid.ItemsSource = dataTable.DefaultView;
-
-            dataAdapter.Update(dataTable);
+            Member.loadMember(DataGrid);
         }
     }
 }
