@@ -27,9 +27,7 @@ namespace MemberDatabase
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string sql = "insert into members (firstname, lastname, birthday, accession, graduation) values ('" + firstNameBox.Text + "', '" + lastNameBox.Text + "', strftime('%s', '2015-06-12'), strftime('%s', 'now'), '1. Dan')";
-            SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
-            command.ExecuteNonQuery();
+            Member.addMember(firstNameBox.Text, lastNameBox.Text, birthdayBox.Text, accessionBox.Text, graduationBox.Text);
             this.Close();
         }
     }

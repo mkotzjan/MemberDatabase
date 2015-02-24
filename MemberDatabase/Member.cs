@@ -26,5 +26,28 @@ namespace MemberDatabase
 
             dataAdapter.Update(dataTable);
         }
+
+        public static void addMember(string firstName, string lastName, string birthday, string accession, string graduation)
+        {
+
+            string sql = "insert into members (firstname, lastname, birthday, accession, graduation) values ('" + firstName + "', '" + lastName + "', strftime('%s', '" + convertDate(birthday) + "'), strftime('%s', '" + convertDate(accession) + "'), '" + graduation +"')";
+            SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
+            command.ExecuteNonQuery();
+        }
+
+        private static string convertDate(string date)
+        {
+            if (date == string.Empty)
+            {
+                return date;
+            }
+            string[] parts = date.Split(new Char[] { '.' });
+            if (parts.Length != 3)
+            {
+                return string.Empty;
+            }
+            date = parts[2] + "-" + parts[1] + "-" + parts[0];
+            return date;
+        }
     }
 }
