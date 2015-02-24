@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SQLite;
 using System.IO;
 using System.Linq;
@@ -47,6 +48,22 @@ namespace MemberDatabase
 
                 command.ExecuteNonQuery();
             }
+        }
+
+        private void mainWindowLoaded(object sender, RoutedEventArgs e)
+        {
+            string sql = "select * from members";
+            SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
+            command.ExecuteNonQuery();
+
+            SQLiteDataAdapter dataAdapter = new SQLiteDataAdapter(command);
+            DataTable dataTable = new DataTable("Mitglieder");
+
+            dataAdapter.Fill(dataTable);
+
+            DataGrid.ItemsSource = dataTable.DefaultView;
+
+            dataAdapter.Update(dataTable);
         }
     }
 }

@@ -1,7 +1,8 @@
 ﻿<Window x:Class="MemberDatabase.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="587.313" Width="798.134" WindowState="Maximized" WindowStartupLocation="CenterScreen">
+        Title="MainWindow" Height="587.313" Width="798.134" WindowState="Maximized" WindowStartupLocation="CenterScreen"
+        Loaded="mainWindowLoaded">
     <Grid>
         <Menu Height="28" VerticalAlignment="Top">
             <MenuItem Header="DATEI">
@@ -25,7 +26,7 @@
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <DataGrid Grid.Column="1" Margin="10" Grid.RowSpan="2"/>
+            <DataGrid x:Name="DataGrid" Grid.Column="1" Margin="10" Grid.RowSpan="2"/>
             <GroupBox Header="Ansicht" Margin="10,10,0,0">
                 <Grid Margin="0">
                     <Grid.ColumnDefinitions>
