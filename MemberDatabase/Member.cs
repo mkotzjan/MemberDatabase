@@ -13,7 +13,7 @@ namespace MemberDatabase
     {
         public static void loadMember(DataGrid dataGrid)
         {
-            string sql = "select * from members";
+            string sql = "select firstname as Vorname, lastname as Nachname, strftime('%d.%m.%Y ', datetime(birthday, 'unixepoch')) as Geburtstag,  strftime('%d.%m.%Y ', datetime(accession, 'unixepoch')) as Beitrittsdatum, graduation as Graduierung from members;";
             SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
             command.ExecuteNonQuery();
 
@@ -25,10 +25,6 @@ namespace MemberDatabase
             dataGrid.ItemsSource = dataTable.DefaultView;
 
             dataAdapter.Update(dataTable);
-        }
-        public static void addMember()
-        {
-            
         }
     }
 }
