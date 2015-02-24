@@ -27,12 +27,13 @@ namespace MemberDatabase
             dataAdapter.Update(dataTable);
         }
 
-        public static void addMember(string firstName, string lastName, string birthday, string accession, string graduation)
+        public static int addMember(string firstName, string lastName, string birthday, string accession, string graduation)
         {
-
+            int errors = 0;
             string sql = "insert into members (firstname, lastname, birthday, accession, graduation) values ('" + firstName + "', '" + lastName + "', strftime('%s', '" + convertDate(birthday) + "'), strftime('%s', '" + convertDate(accession) + "'), '" + graduation +"')";
             SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
             command.ExecuteNonQuery();
+            return errors;
         }
 
         private static string convertDate(string date)

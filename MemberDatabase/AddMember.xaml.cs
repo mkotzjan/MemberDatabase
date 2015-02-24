@@ -27,8 +27,10 @@ namespace MemberDatabase
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Member.addMember(firstNameBox.Text, lastNameBox.Text, birthdayBox.Text, accessionBox.Text, graduationBox.Text);
-            this.Close();
+            if (Member.addMember(firstNameBox.Text, lastNameBox.Text, birthdayBox.Text, accessionBox.Text, graduationBox.Text) == 0)
+            {
+                this.Close();
+            }
         }
     }
 }
