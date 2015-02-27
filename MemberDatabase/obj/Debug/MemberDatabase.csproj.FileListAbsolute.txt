@@ -1,1 +1,13 @@
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\Debug\MemberDatabase.exe.config
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\Debug\MemberDatabase.exe
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\Debug\MemberDatabase.pdb
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase.csprojResolveAssemblyReference.cache
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\App.g.cs
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase_MarkupCompile.cache
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase.g.resources
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase.Properties.Resources.resources
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase.csproj.GenerateResource.Cache
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase.exe
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase.pdb
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\View\DataGridView.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\View\DataGridView.g.cs
