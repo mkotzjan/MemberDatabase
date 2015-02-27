@@ -13,3 +13,14 @@ C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\View
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\View\DataGridView.g.cs
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase_MarkupCompile.lref
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Style\ButtonStyles.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Style\ComboBoxStyles.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Style\DataGridStyles.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Style\GroupBoxStyles.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Style\ListBoxStyles.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Style\MenuStyles.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Style\ScrollBarStyles.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Style\Styles.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Style\TextBoxStyles.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Style\WindowStyles.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\App.baml
