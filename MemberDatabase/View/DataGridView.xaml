@@ -8,6 +8,14 @@
             <MenuItem Header="Bearbeiten"/>
             <MenuItem Header="?"/>
         </Menu>
+        <Grid Margin="0,25,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="135"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <DataGrid Grid.Column="1" RenderTransformOrigin="-3.583,-3.154"/>
+            <Grid HorizontalAlignment="Left" Height="295" VerticalAlignment="Top" Width="135"/>
+        </Grid>
 
     </Grid>
 </Window>
