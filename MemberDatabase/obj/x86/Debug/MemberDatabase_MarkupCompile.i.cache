@@ -4,7 +4,7 @@
 winexe
 C#
 .cs
-C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\
 MemberDatabase
 none
 false
@@ -12,7 +12,7 @@ DEBUG;TRACE
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\App.xaml
 2562235035
 
-17893208640
+15894005538
 13300257938
 View\PlotView.xaml;View\DataGridView.xaml;
 
