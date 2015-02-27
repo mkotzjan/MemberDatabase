@@ -11,3 +11,5 @@ C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Memb
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase.pdb
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\View\DataGridView.baml
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\View\DataGridView.g.cs
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase_MarkupCompile.lref
