@@ -8,5 +8,10 @@ namespace MemberDatabase.ViewModel
 {
     class DataGridViewModel : BaseViewModel
     {
+        public List<Member> members;
+        public DataGridViewModel()
+        {
+
+        }
     }
 }

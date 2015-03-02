@@ -9,7 +9,7 @@ namespace MemberDatabase.Model
     /// <summary>
     /// Represents a member
     /// </summary>
-    class Member
+    public class Member
     {
         /// <summary>
         /// Gets or sets the firstname.
