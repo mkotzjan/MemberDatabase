@@ -6,7 +6,27 @@ using System.Threading.Tasks;
 
 namespace MemberDatabase.Model
 {
-    class Database
+    public class Database
     {
+        private static Database connection;
+        private static SQLiteConnection dbConnection;
+
+        private Database()
+        {
+            dbConnection = new SQLiteConnection("Data Source=MyDatabase.sqlite;Version=3;");
+            dbConnection.Open();
+        }
+
+        public static SQLiteConnection instance
+        {
+            get
+            {
+                if (connection == null)
+                {
+                    connection = new Database();
+                }
+                return dbConnection;
+            }
+        }
     }
 }
