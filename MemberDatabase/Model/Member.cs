@@ -92,11 +92,11 @@ namespace MemberDatabase.Model
             }
         }
 
-        bool? _active;
+        bool _active;
         /// <summary>
         /// Gets or sets the active state.
         /// </summary>
-        public bool? active
+        public bool active
         {
             get
             {

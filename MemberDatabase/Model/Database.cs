@@ -47,7 +47,7 @@ namespace MemberDatabase.Model
                 {
                     accession = Convert.ToInt32(reader["accession"]);
                 }
-                bool? active = null;
+                bool active = true;
                 if (reader["active"] != DBNull.Value)
                 {
                     active = Convert.ToBoolean(reader["active"]);
