@@ -65,6 +65,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Database.cs" />
+    <Compile Include="Model\DatabaseConnection.cs" />
     <Compile Include="Model\Member.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\DataGridViewModel.cs" />

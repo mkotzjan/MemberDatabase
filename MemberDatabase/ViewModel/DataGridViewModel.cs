@@ -11,16 +11,13 @@ namespace MemberDatabase.ViewModel
 {
     class DataGridViewModel : BaseViewModel
     {
-        public ObservableCollection<Member> members { get; set; }
+        public List<Member> members { get; set; }
+        private Database db;
+
         public DataGridViewModel()
         {
-            members = new ObservableCollection<Member>()
-            { 
-                new Member { firstName = "Max", lastName = "Mustermann", birthday = 12345, accession = 54321, active = true},
-                new Member { firstName = "Max", lastName = "Mustermann", birthday = 12345, accession = 54321, active = true},
-                new Member { firstName = "Max", lastName = "Mustermann", birthday = 12345, accession = 54321, active = true},
-                new Member { firstName = "Max", lastName = "Mustermann", birthday = 12345, accession = 54321, active = true}
-            };
+            db = new Database();
+            members = db.content();
         }
     }
 }

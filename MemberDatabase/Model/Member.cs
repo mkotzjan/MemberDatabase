@@ -52,11 +52,11 @@ namespace MemberDatabase.Model
             }
         }
 
-        int _birthday;
+        int? _birthday;
         /// <summary>
         /// Gets or sets the birthday.
         /// </summary>
-        public int birthday
+        public int? birthday
         {
             get
             {
@@ -72,11 +72,11 @@ namespace MemberDatabase.Model
             }
         }
 
-        int _accession;
+        int? _accession;
         /// <summary>
         /// Gets or sets the accession day.
         /// </summary>
-        public int accession
+        public int? accession
         {
             get
             {
@@ -92,11 +92,11 @@ namespace MemberDatabase.Model
             }
         }
 
-        bool _active;
+        bool? _active;
         /// <summary>
         /// Gets or sets the active state.
         /// </summary>
-        public bool active
+        public bool? active
         {
             get
             {
