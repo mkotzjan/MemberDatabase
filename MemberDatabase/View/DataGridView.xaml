@@ -20,11 +20,13 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <DataGrid Grid.Column="1" RenderTransformOrigin="-3.583,-3.154" ItemsSource="{Binding members}" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn"/>
-            <Grid HorizontalAlignment="Left" Height="295" VerticalAlignment="Top" Width="135">
+            <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="200"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="148*"/>
+                    <RowDefinition Height="147*"/>
                 </Grid.RowDefinitions>
+                <TextBox Margin="10" Grid.Row="1" DataContext="{Binding anniversary}">
+                </TextBox>
             </Grid>
         </Grid>
 

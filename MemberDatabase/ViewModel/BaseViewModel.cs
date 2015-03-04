@@ -10,7 +10,7 @@ namespace MemberDatabase.ViewModel
 {
     class BaseViewModel : INotifyPropertyChanged
     {
-        void RaisePropertyChanged(string prop)
+        public void RaisePropertyChanged(string prop)
         {
             if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(prop)); }
         }
