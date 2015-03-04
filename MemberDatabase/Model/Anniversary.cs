@@ -8,9 +8,19 @@ namespace MemberDatabase.Model
 {
     class Anniversary
     {
-        public string next(List<Member> member)
+        private List<Member> memberList;
+        public Anniversary(List<Member> member)
         {
-            return "Geburtstage:\n\n1\n2\n3\n4\n5\n\nMitgliedschaft:\n\n1\n2\n3\n4\n5";
+            memberList = member;
+        }
+        public string nextAnniversary()
+        {
+            return "  1\n  2\n  3\n  4\n  5\n";
+        }
+
+        public string nextBirthday()
+        {
+            return "  1\n  2\n  3\n  4\n  5\n";
         }
     }
 }

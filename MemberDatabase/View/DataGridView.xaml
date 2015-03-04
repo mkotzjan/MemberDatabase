@@ -26,8 +26,7 @@
                     <RowDefinition Height="147*"/>
                 </Grid.RowDefinitions>
                 <GroupBox Header="Jubiläen" Grid.Row="1">
-                <TextBlock Margin="10" Text="{Binding anniversary}">
-                </TextBlock>
+                    <TextBlock Margin="10" FontWeight="Bold" Text="Geburtstage&#10;&#10;"><Run Text="{Binding birthday}"/><Run FontWeight="Bold" Text="&#10; Mitgliedschaft &#10;&#10;"/><Run Text="{Binding anniversary}"/></TextBlock>
                 </GroupBox>
             </Grid>
         </Grid>

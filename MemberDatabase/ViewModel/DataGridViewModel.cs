@@ -13,15 +13,17 @@ namespace MemberDatabase.ViewModel
     {
         public List<Member> members { get; set; }
         public string anniversary { get; set; }
+        public string birthday { get; set; }
         private Database db;
         private Anniversary an;
 
         public DataGridViewModel()
         {
             db = new Database();
-            an = new Anniversary();
+            an = new Anniversary(members);
             members = db.content();
-            anniversary = an.next(members);
+            birthday = an.nextBirthday();
+            anniversary = an.nextAnniversary();
         }
     }
 }
