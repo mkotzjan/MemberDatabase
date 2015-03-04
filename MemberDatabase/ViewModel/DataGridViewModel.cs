@@ -12,30 +12,16 @@ namespace MemberDatabase.ViewModel
     class DataGridViewModel : BaseViewModel
     {
         public List<Member> members { get; set; }
-        private string nextAnniversary;
+        public string anniversary { get; set; }
         private Database db;
+        private Anniversary an;
 
         public DataGridViewModel()
         {
             db = new Database();
+            an = new Anniversary();
             members = db.content();
-            nextAnniversary = "Test";
-        }
-
-        public string anniversary
-        {
-            get
-            {
-                return nextAnniversary;
-            }
-            set
-            {
-                if (nextAnniversary != value)
-                {
-                    nextAnniversary = value;
-                    RaisePropertyChanged("anniversary");
-                }
-            }
+            anniversary = an.next(members);
         }
     }
 }

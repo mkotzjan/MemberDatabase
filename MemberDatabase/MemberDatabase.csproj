@@ -64,6 +64,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Model\Anniversary.cs" />
     <Compile Include="Model\Database.cs" />
     <Compile Include="Model\DatabaseConnection.cs" />
     <Compile Include="Model\Member.cs" />
