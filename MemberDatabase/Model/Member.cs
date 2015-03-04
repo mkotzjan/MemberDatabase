@@ -52,11 +52,11 @@ namespace MemberDatabase.Model
             }
         }
 
-        int? _birthday;
+        DateTime? _birthday;
         /// <summary>
         /// Gets or sets the birthday.
         /// </summary>
-        public int? birthday
+        public DateTime? birthday
         {
             get
             {
@@ -72,11 +72,11 @@ namespace MemberDatabase.Model
             }
         }
 
-        int? _accession;
+        DateTime? _accession;
         /// <summary>
         /// Gets or sets the accession day.
         /// </summary>
-        public int? accession
+        public DateTime? accession
         {
             get
             {

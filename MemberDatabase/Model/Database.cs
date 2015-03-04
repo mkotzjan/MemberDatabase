@@ -30,22 +30,22 @@ namespace MemberDatabase.Model
         public List<Member> content()
         {
             List<Member> importedContend = new List<Member>();
-            string sql = "select * from members;";
+            string sql = "select firstname, lastname, strftime('%d.%m.%Y ', datetime(birthday, 'unixepoch')) as birthday,  strftime('%d.%m.%Y ', datetime(accession, 'unixepoch')) as accession, active from members;";
             SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
             SQLiteDataReader reader = command.ExecuteReader();
             while (reader.Read())
             {
                 string firstName = Convert.ToString(reader["firstname"]);
                 string lastName = Convert.ToString(reader["lastname"]);
-                int? birthday = null;
+                DateTime? birthday = null;
                 if (reader["birthday"] != DBNull.Value)
                 {
-                    birthday = Convert.ToInt32(reader["birthday"]);
+                    birthday = Convert.ToDateTime(reader["birthday"]);
                 }
-                int? accession = null;
+                DateTime? accession = null;
                 if (reader["accession"] != DBNull.Value)
                 {
-                    accession = Convert.ToInt32(reader["accession"]);
+                    accession = Convert.ToDateTime(reader["accession"]);
                 }
                 bool active = true;
                 if (reader["active"] != DBNull.Value)
