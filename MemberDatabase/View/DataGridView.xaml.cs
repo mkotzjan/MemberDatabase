@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace MemberDatabase
 {
@@ -26,10 +27,12 @@ namespace MemberDatabase
             else if (e.Column.Header.ToString() == "birthday")
             {
                 e.Column.Header = "Geburtstag";
+                (e.Column as DataGridTextColumn).Binding.StringFormat = "dd'.'MM'.'yyyy";
             }
             else if (e.Column.Header.ToString() == "accession")
             {
                 e.Column.Header = "Eintrittsdatum";
+                (e.Column as DataGridTextColumn).Binding.StringFormat = "dd'.'MM'.'yyyy";
             }
             else if (e.Column.Header.ToString() == "active")
             {
