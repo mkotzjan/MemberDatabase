@@ -25,8 +25,10 @@
                     <RowDefinition Height="148*"/>
                     <RowDefinition Height="147*"/>
                 </Grid.RowDefinitions>
-                <TextBox Margin="10" Grid.Row="1" DataContext="{Binding anniversary}">
-                </TextBox>
+                <GroupBox Header="Jubiläen" Grid.Row="1">
+                <TextBlock Margin="10" Text="{Binding anniversary}">
+                </TextBlock>
+                </GroupBox>
             </Grid>
         </Grid>
 
