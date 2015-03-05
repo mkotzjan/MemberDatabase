@@ -10,16 +10,37 @@
     </Window.Resources>
     <Grid>
         <Menu Height="25" VerticalAlignment="Top">
-            <MenuItem Header="Datei"/>
-            <MenuItem Header="Bearbeiten"/>
-            <MenuItem Header="?"/>
+            <MenuItem Header="Datei">
+                <MenuItem Header="Aktualisieren" HorizontalAlignment="Left"/>
+                <Separator HorizontalAlignment="Left" Width="145"/>
+                <MenuItem Header="Beenden" HorizontalAlignment="Left"/>
+            </MenuItem>
+            <MenuItem Header="Bearbeiten">
+                <MenuItem Header="Bearbeitungsmodus" HorizontalAlignment="Left" IsCheckable="True"/>
+                <MenuItem Header="Mitglied hinzufügen" HorizontalAlignment="Left"/>
+            </MenuItem>
+            <MenuItem Header="?">
+                <MenuItem Header="Hilfe" HorizontalAlignment="Left" Width="145"/>
+                <Separator HorizontalAlignment="Left" Width="145"/>
+                <MenuItem Header="Info" HorizontalAlignment="Left" Width="145"/>
+            </MenuItem>
         </Menu>
         <Grid Margin="0,25,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <DataGrid Grid.Column="1" RenderTransformOrigin="-3.583,-3.154" ItemsSource="{Binding members}" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" CanUserAddRows="false"/>
+            <DataGrid Grid.Column="1" RenderTransformOrigin="-3.583,-3.154" ItemsSource="{Binding members}" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" CanUserAddRows="false">
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding active}" Value="false">
+                                <Setter Property="Background" Value="LightGray"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.RowStyle>
+            </DataGrid>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="148*"/>
