@@ -37,7 +37,20 @@ namespace MemberDatabase.Model
 
                 var min = daysToAnniversary.Aggregate((l, r) => l.Value < r.Value ? l : r).Key;
                 Member resultMember = sortedList.Find(item => item.getID() == min);
-                output = output + "  " + resultMember.firstName + " " + resultMember.lastName + ", " + ((DateTime)resultMember.accession).ToString("dd'.'MM'.'yyyy") + " (" + daysToAnniversary[min] + " Tage)\n";
+                string days = "";
+                if (daysToAnniversary[min] == 0)
+	            {
+                    days = "Heute";
+	            }
+                else if (daysToAnniversary[min] == 1)
+                {
+                    days = "Morgen";
+                }
+                else
+                {
+                    days = daysToAnniversary[min] + " Tage";
+                }
+                output = output + "  " + resultMember.firstName + " " + resultMember.lastName + ", " + ((DateTime)resultMember.accession).ToString("dd'.'MM'.'yyyy") + " (" + days + ")\n";
                 daysToAnniversary.Remove(min);
             }
             return output;
@@ -65,7 +78,20 @@ namespace MemberDatabase.Model
 
                 var min = daysToBirthday.Aggregate((l, r) => l.Value < r.Value ? l : r).Key;
                 Member resultMember = sortedList.Find(item => item.getID() == min);
-                output = output + "  " + resultMember.firstName + " " + resultMember.lastName + ", " + ((DateTime)resultMember.birthday).ToString("dd'.'MM'.'yyyy") + " (" + daysToBirthday[min] + " Tage)\n";
+                string days = "";
+                if (daysToBirthday[min] == 0)
+                {
+                    days = "Heute";
+                }
+                else if (daysToBirthday[min] == 1)
+                {
+                    days = "Morgen";
+                }
+                else
+                {
+                    days = daysToBirthday[min] + " Tage";
+                }
+                output = output + "  " + resultMember.firstName + " " + resultMember.lastName + ", " + ((DateTime)resultMember.birthday).ToString("dd'.'MM'.'yyyy") + " (" + days + ")\n";
                 daysToBirthday.Remove(min);
             }
             return output;
