@@ -8,15 +8,15 @@ namespace MemberDatabase.Model
 {
     class Anniversary
     {
-        private List<Member> memberList;
+        private List<Member> sortedList;
+        private DateTime today;
         public Anniversary(List<Member> member)
         {
-            memberList = member;
+            sortedList = member.OrderBy(d => d.accession).ToList<Member>();
+            today = DateTime.Today;
         }
         public string nextAnniversary()
         {
-            List<Member> sortedList = memberList.OrderBy(d => d.accession).ToList<Member>();
-            DateTime today = DateTime.Today;
             Dictionary<int, int> daysToAnniversary = new Dictionary<int,int>();
             string output = "";
             foreach (Member member in sortedList)
@@ -37,7 +37,7 @@ namespace MemberDatabase.Model
 
                 var min = daysToAnniversary.Aggregate((l, r) => l.Value < r.Value ? l : r).Key;
                 Member resultMember = sortedList.Find(item => item.getID() == min);
-                output = output + "  " + resultMember.firstName + " " + resultMember.lastName + ", " + ((DateTime)resultMember.accession).ToString("dd'.'MM'.'yyyy") + " (" + daysToAnniversary[min] + ")\n";
+                output = output + "  " + resultMember.firstName + " " + resultMember.lastName + ", " + ((DateTime)resultMember.accession).ToString("dd'.'MM'.'yyyy") + " (" + daysToAnniversary[min] + " Tage)\n";
                 daysToAnniversary.Remove(min);
             }
             return output;
@@ -45,8 +45,30 @@ namespace MemberDatabase.Model
 
         public string nextBirthday()
         {
+            Dictionary<int, int> daysToBirthday = new Dictionary<int, int>();
+            string output = "";
+            foreach (Member member in sortedList)
+            {
+                if (member.birthday != null)
+                {
+                    member.birthday = member.birthday.Value.AddYears(today.Year - member.birthday.Value.Year);
+                    if (member.birthday < today)
+                        member.birthday = member.birthday.Value.AddYears(1);
 
-            return "  1\n  2\n  3\n  4\n  5\n";
+                    daysToBirthday.Add(member.getID(), (member.birthday.Value - today).Days);
+                }
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (daysToBirthday.Count == 0) { break; }
+
+                var min = daysToBirthday.Aggregate((l, r) => l.Value < r.Value ? l : r).Key;
+                Member resultMember = sortedList.Find(item => item.getID() == min);
+                output = output + "  " + resultMember.firstName + " " + resultMember.lastName + ", " + ((DateTime)resultMember.birthday).ToString("dd'.'MM'.'yyyy") + " (" + daysToBirthday[min] + " Tage)\n";
+                daysToBirthday.Remove(min);
+            }
+            return output;
         }
     }
 }
