@@ -12,6 +12,17 @@ namespace MemberDatabase.Model
     /// </summary>
     public class Member : INotifyPropertyChanged
     {
+        int _id = 0;
+
+        public void setID(int id)
+        {
+            _id = id;
+        }
+
+        public int getID()
+        {
+            return _id;
+        }
         string _firstName;
         /// <summary>
         /// Gets or sets the firstname.
