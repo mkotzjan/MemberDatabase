@@ -1,8 +1,32 @@
-﻿<Window x:Class="MemberDatabase.ViewModel.AddMemberView"
+﻿<Window x:Class="MemberDatabase.View.AddMemberView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="AddMemberView" Height="300" Width="300">
-    <Grid>
-        
+    <Grid Margin="0,8,23,3">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Vorname:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="26" Width="61" Grid.RowSpan="2"/>
+        <Label Content="Nachname:" HorizontalAlignment="Left" Margin="10,0,0,24" VerticalAlignment="Bottom" RenderTransformOrigin="1.279,7.228" Height="26" Width="70" Grid.RowSpan="2" Grid.Row="1"/>
+        <Label Content="Geburtsdatum" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="2" Height="26" Width="86"/>
+        <Label Content="Beitrittsdatum" HorizontalAlignment="Left" Margin="11,0,0,0" VerticalAlignment="Top" Grid.Row="3" Height="26" Width="85"/>
+        <Label HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="10" Width="10"/>
+        <Label Content="Graduierung" Margin="10,0,0,0" Grid.Row="4" HorizontalAlignment="Left" Width="78"/>
+        <TextBox x:Name="firstNameBox" Grid.Column="1" TextWrapping="Wrap" MaxLines="1" Margin="1"/>
+        <TextBox x:Name="lastNameBox" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" MaxLines="1" Margin="1"/>
+        <TextBox x:Name="birthdayBox" Grid.Column="1" TextWrapping="Wrap" Margin="1" Grid.Row="2" MaxLines="1"/>
+        <TextBox x:Name="accessionBox" Grid.Column="1" TextWrapping="Wrap" Grid.Row="3" MaxLines="1" Margin="1"/>
+        <TextBox x:Name="graduationBox" Grid.Column="1" TextWrapping="Wrap" Margin="1" Grid.Row="4" MaxLines="1" IsUndoEnabled="True"/>
+        <Button Content="Speichern" Grid.Column="1" HorizontalAlignment="Left" Margin="332,22,0,0" Grid.Row="5" VerticalAlignment="Top" Width="75"/>
+
     </Grid>
 </Window>

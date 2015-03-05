@@ -15,3 +15,5 @@ C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Gene
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase_MarkupCompile.lref
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\Debug\System.Data.SQLite.dll
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\Debug\System.Data.SQLite.xml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\View\AddMemberView.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\View\AddMemberView.g.cs
