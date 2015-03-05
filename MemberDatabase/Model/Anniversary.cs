@@ -15,11 +15,37 @@ namespace MemberDatabase.Model
         }
         public string nextAnniversary()
         {
-            return "  1\n  2\n  3\n  4\n  5\n";
+            List<Member> sortedList = memberList.OrderBy(d => d.accession).ToList<Member>();
+            DateTime today = DateTime.Today;
+            Dictionary<int, int> daysToAnniversary = new Dictionary<int,int>();
+            string output = "";
+            foreach (Member member in sortedList)
+            {
+                if (member.accession != null)
+                {
+                    member.accession = member.accession.Value.AddYears(today.Year - member.accession.Value.Year);
+                    if (member.accession < today)
+                        member.accession = member.accession.Value.AddYears(1);
+
+                    daysToAnniversary.Add(member.getID(), (member.accession.Value - today).Days);
+                }
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                if (daysToAnniversary.Count == 0) { break; }
+
+                var min = daysToAnniversary.Aggregate((l, r) => l.Value < r.Value ? l : r).Key;
+                Member resultMember = sortedList.Find(item => item.getID() == min);
+                output = output + "  " + resultMember.firstName + " " + resultMember.lastName + ", " + ((DateTime)resultMember.accession).ToString("dd'.'MM'.'yyyy") + " (" + daysToAnniversary[min] + ")\n";
+                daysToAnniversary.Remove(min);
+            }
+            return output;
         }
 
         public string nextBirthday()
         {
+
             return "  1\n  2\n  3\n  4\n  5\n";
         }
     }

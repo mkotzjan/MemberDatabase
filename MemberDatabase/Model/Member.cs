@@ -12,16 +12,16 @@ namespace MemberDatabase.Model
     /// </summary>
     public class Member : INotifyPropertyChanged
     {
-        int _id = 0;
+        int _id;
 
         public void setID(int id)
         {
-            _id = id;
+            this._id = id;
         }
 
         public int getID()
         {
-            return _id;
+            return this._id;
         }
         string _firstName;
         /// <summary>

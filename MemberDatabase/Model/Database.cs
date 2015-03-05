@@ -30,11 +30,13 @@ namespace MemberDatabase.Model
         public List<Member> content()
         {
             List<Member> importedContend = new List<Member>();
-            string sql = "select firstname, lastname, strftime('%d.%m.%Y ', datetime(birthday, 'unixepoch')) as birthday,  strftime('%d.%m.%Y ', datetime(accession, 'unixepoch')) as accession, active from members;";
+            string sql = "select rowid, firstname, lastname, strftime('%d.%m.%Y ', datetime(birthday, 'unixepoch')) as birthday,  strftime('%d.%m.%Y ', datetime(accession, 'unixepoch')) as accession, active from members;";
             SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
             SQLiteDataReader reader = command.ExecuteReader();
+            Member member;
             while (reader.Read())
             {
+                int id = Convert.ToInt32(reader["rowid"]);
                 string firstName = Convert.ToString(reader["firstname"]);
                 string lastName = Convert.ToString(reader["lastname"]);
                 DateTime? birthday = null;
@@ -52,7 +54,9 @@ namespace MemberDatabase.Model
                 {
                     active = Convert.ToBoolean(reader["active"]);
                 }
-                importedContend.Add(new Member { firstName = firstName, lastName = lastName, birthday = birthday, accession = accession, active = active });
+                member = new Member { firstName = firstName, lastName = lastName, birthday = birthday, accession = accession, active = active };
+                member.setID(id);
+                importedContend.Add(member);
             }
             return importedContend;
         }

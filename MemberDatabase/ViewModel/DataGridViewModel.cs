@@ -20,8 +20,8 @@ namespace MemberDatabase.ViewModel
         public DataGridViewModel()
         {
             db = new Database();
-            an = new Anniversary(members);
             members = db.content();
+            an = new Anniversary(members);
             birthday = an.nextBirthday();
             anniversary = an.nextAnniversary();
         }
