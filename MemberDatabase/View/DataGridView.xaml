@@ -11,7 +11,7 @@
     <Grid>
         <Menu Height="25" VerticalAlignment="Top">
             <MenuItem Header="Datei">
-                <MenuItem Header="Aktualisieren" HorizontalAlignment="Left"/>
+                <MenuItem Header="Neu Laden" HorizontalAlignment="Left" Command="{Binding Path=loadDatabase}"/>
                 <Separator HorizontalAlignment="Left" Width="145"/>
                 <MenuItem Header="Beenden" HorizontalAlignment="Left" Click="MenuItemClose_Click"/>
             </MenuItem>

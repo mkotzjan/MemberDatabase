@@ -72,6 +72,7 @@
     <Compile Include="Model\Database.cs" />
     <Compile Include="Model\DatabaseConnection.cs" />
     <Compile Include="Model\Member.cs" />
+    <Compile Include="Model\RelayCommand.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\DataGridViewModel.cs" />
     <Compile Include="View\AddMemberView.xaml.cs">
