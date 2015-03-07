@@ -25,5 +25,10 @@ namespace MemberDatabase.ViewModel
             birthday = an.nextBirthday();
             anniversary = an.nextAnniversary();
         }
+
+        public void loadDataBase()
+        {
+
+        }
     }
 }
