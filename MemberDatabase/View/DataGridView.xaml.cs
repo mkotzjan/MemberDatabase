@@ -39,5 +39,10 @@ namespace MemberDatabase
                 e.Column.Header = "Aktiv";
             }
         }
+
+        private void MenuItemClose_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

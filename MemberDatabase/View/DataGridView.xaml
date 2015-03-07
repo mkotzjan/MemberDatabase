@@ -13,7 +13,7 @@
             <MenuItem Header="Datei">
                 <MenuItem Header="Aktualisieren" HorizontalAlignment="Left"/>
                 <Separator HorizontalAlignment="Left" Width="145"/>
-                <MenuItem Header="Beenden" HorizontalAlignment="Left"/>
+                <MenuItem Header="Beenden" HorizontalAlignment="Left" Click="MenuItemClose_Click"/>
             </MenuItem>
             <MenuItem Header="Bearbeiten">
                 <MenuItem Header="Bearbeitungsmodus" HorizontalAlignment="Left" IsCheckable="True"/>
