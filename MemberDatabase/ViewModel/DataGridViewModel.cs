@@ -20,6 +20,7 @@ namespace MemberDatabase.ViewModel
         public DataGridViewModel()
         {
             db = new Database();
+            loadDataBase();
         }
 
         public void loadDataBase()
