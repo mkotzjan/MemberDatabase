@@ -31,6 +31,9 @@ namespace MemberDatabase.ViewModel
             an = new Anniversary(members);
             birthday = an.nextBirthday();
             anniversary = an.nextAnniversary();
+            RaisePropertyChanged("members");
+            RaisePropertyChanged("anniversary");
+            RaisePropertyChanged("birthday");
         }
 
 
