@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:MemberDatabase.ViewModel" 
         xmlns:Properties="clr-namespace:MemberDatabase.Properties" x:Class="MemberDatabase.DataGridView"
-        Title="MainWindow" Height="350" Width="525" WindowState="Maximized"
+        Title="MemberDatabase" Height="350" Width="525" WindowState="Maximized"
         DataContext="{DynamicResource DataGridViewModel}">
     <Window.Resources>
         <vm:DataGridViewModel x:Key="DataGridViewModel"/>
