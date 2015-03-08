@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("style/selen.wpf.systemstyles.csproj")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("1425830150_299089.ico")]
 
 
