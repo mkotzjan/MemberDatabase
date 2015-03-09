@@ -11,18 +11,38 @@
     <Grid>
         <Menu Height="25" VerticalAlignment="Top">
             <MenuItem Header="Datei">
-                <MenuItem Header="Neu Laden" HorizontalAlignment="Left" Command="{Binding Path=loadDatabase}"/>
-                <Separator HorizontalAlignment="Left" Width="145"/>
-                <MenuItem Header="Beenden" HorizontalAlignment="Left" Click="MenuItemClose_Click"/>
+                <MenuItem Header="Neu Laden" HorizontalAlignment="Left" Command="{Binding Path=loadDatabase}">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/Resources/database_refresh.png" Height="16" Width="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                    <Separator HorizontalAlignment="Left" Width="145"/>
+                <MenuItem Header="Beenden" HorizontalAlignment="Left" Click="MenuItemClose_Click">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/Resources/exit.png" Height="16" Width="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Bearbeiten">
                 <MenuItem Header="Bearbeitungsmodus" HorizontalAlignment="Left" IsCheckable="True" IsChecked="{Binding editModeChecked, Mode=TwoWay}"/>
-                <MenuItem Header="Mitglied hinzufügen" HorizontalAlignment="Left"/>
+                <MenuItem Header="Mitglied hinzufügen" HorizontalAlignment="Left">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/Resources/member_add.png" Height="16" Width="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="?">
-                <MenuItem Header="Hilfe" HorizontalAlignment="Left" Width="145"/>
+                <MenuItem Header="Hilfe" HorizontalAlignment="Left" Width="145">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/Resources/help.png" Height="16" Width="16" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator HorizontalAlignment="Left" Width="145"/>
-                <MenuItem Header="Info" HorizontalAlignment="Left" Width="145"/>
+                <MenuItem Header="Info" HorizontalAlignment="Left" Width="145">
+                    <MenuItem.Icon>
+                        <Image Source="pack://siteoforigin:,,,/Resources/information.png" Height="16" Width="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
         </Menu>
         <Grid Margin="0,25,0,0">

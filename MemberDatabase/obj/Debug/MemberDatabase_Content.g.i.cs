@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/1425958378_database_refresh.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/1425958503_cross.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/1425958599_group_add.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/1425958644_information.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/1425958656_help.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/database_refresh.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/exit.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/help.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/information.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/member_add.png")]
 
 
