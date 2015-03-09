@@ -24,6 +24,7 @@ namespace MemberDatabase.ViewModel
             db = new Database();
             loadDataBase();
             editModeChecked = false;
+            readOnly = true;
         }
 
         public void loadDataBase()
@@ -71,5 +72,23 @@ namespace MemberDatabase.ViewModel
             }
         }
 
+        bool _readOnly;
+
+        public bool readOnly
+        {
+            get
+            {
+                return _readOnly;
+            }
+
+            set
+            {
+                if (_readOnly != value)
+                {
+                    _readOnly = value;
+                    RaisePropertyChanged("readOnly");
+                }
+            }
+        }
     }
 }
