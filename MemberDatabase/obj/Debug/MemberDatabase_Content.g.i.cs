@@ -8,6 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("1425830150_299089.ico")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/1425958378_database_refresh.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/1425958503_cross.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/1425958599_group_add.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/1425958644_information.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ressources/1425958656_help.png")]
 
 
