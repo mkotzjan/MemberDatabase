@@ -16,7 +16,7 @@
                 <MenuItem Header="Beenden" HorizontalAlignment="Left" Click="MenuItemClose_Click"/>
             </MenuItem>
             <MenuItem Header="Bearbeiten">
-                <MenuItem Header="Bearbeitungsmodus" HorizontalAlignment="Left" IsCheckable="True"/>
+                <MenuItem Header="Bearbeitungsmodus" HorizontalAlignment="Left" IsCheckable="True" IsChecked="{Binding editModeChecked, Mode=TwoWay}"/>
                 <MenuItem Header="Mitglied hinzufügen" HorizontalAlignment="Left"/>
             </MenuItem>
             <MenuItem Header="?">
@@ -30,7 +30,7 @@
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <DataGrid Grid.Column="1" RenderTransformOrigin="-3.583,-3.154" ItemsSource="{Binding members}" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" CanUserAddRows="false">
+            <DataGrid Grid.Column="1" RenderTransformOrigin="-3.583,-3.154" ItemsSource="{Binding members}" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" CanUserAddRows="false" IsReadOnly="{Binding readOnly}">
                 <DataGrid.RowStyle>
                     <Style TargetType="DataGridRow">
                         <Style.Triggers>
