@@ -23,6 +23,7 @@ namespace MemberDatabase.ViewModel
         {
             db = new Database();
             loadDataBase();
+            editModeChecked = false;
         }
 
         public void loadDataBase()
@@ -49,5 +50,26 @@ namespace MemberDatabase.ViewModel
                 return _loadCommand;
             }
         }
+
+        bool _editModeChecked;
+
+        public bool editModeChecked
+        {
+            get
+            {
+                return _editModeChecked;
+            }
+
+            set
+            {
+                if (_editModeChecked != value)
+                {
+                    _editModeChecked = value;
+                    RaisePropertyChanged("editMode");
+                    readOnly = !(value);
+                }
+            }
+        }
+
     }
 }
