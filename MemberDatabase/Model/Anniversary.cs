@@ -52,7 +52,7 @@
                     days = daysToAnniversary[min] + " Tage";
                 }
                 anniversarys.Add(resultMember.firstName + " " + resultMember.lastName + " (" + days + ")");
-                anniversarysTooltip.Add(((DateTime)resultMember.birthday).ToString("dd'.'MM'.'yyyy"));
+                anniversarysTooltip.Add(((DateTime)resultMember.accession).ToString("dd'.'MM'.'yyyy") + " (" + calcYears((DateTime)resultMember.accession) + " Jahre)");
                 daysToAnniversary.Remove(min);
             }
             return new Tuple<List<string>, List<string>>(anniversarys, anniversarysTooltip);
@@ -96,10 +96,18 @@
                     days = daysToBirthday[min] + " Tage";
                 }
                 birthdays.Add(resultMember.firstName + " " + resultMember.lastName + " (" + days + ")");
-                birthdaysTooltip.Add(((DateTime)resultMember.birthday).ToString("dd'.'MM'.'yyyy"));
+                birthdaysTooltip.Add(((DateTime)resultMember.birthday).ToString("dd'.'MM'.'yyyy") + " (" + calcYears((DateTime)resultMember.birthday) + " Jahre)");
                 daysToBirthday.Remove(min);
             }
             return new Tuple<List<string>,List<string>>(birthdays, birthdaysTooltip);
+        }
+
+        private string calcYears(DateTime date)
+        {
+            int years = today.Year - date.Year;
+            if (today < date.AddYears(years)) years--;
+
+            return years.ToString();
         }
     }
 }
