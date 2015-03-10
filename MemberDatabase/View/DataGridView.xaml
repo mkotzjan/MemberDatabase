@@ -25,20 +25,20 @@
             </MenuItem>
             <MenuItem Header="Bearbeiten">
                 <MenuItem Header="Bearbeitungsmodus" HorizontalAlignment="Left" IsCheckable="True" IsChecked="{Binding editModeChecked, Mode=TwoWay}"/>
-                <MenuItem Header="Mitglied hinzufügen" HorizontalAlignment="Left">
+                <MenuItem Header="Mitglied hinzufügen" HorizontalAlignment="Left" Click="MenuItemAdd_Click">
                     <MenuItem.Icon>
                         <Image Source="pack://application:,,,/Resources/member_add.png" Height="20" Width="20" />
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="?">
-                <MenuItem Header="Hilfe" HorizontalAlignment="Left" Width="145">
+                <MenuItem Header="Hilfe" HorizontalAlignment="Left" Width="145" Command="{Binding Path=notImplementedError}">
                     <MenuItem.Icon>
                         <Image Source="pack://application:,,,/Resources/help.png" Height="20" Width="20" />
                     </MenuItem.Icon>
                 </MenuItem>
                 <Separator HorizontalAlignment="Left" Width="145"/>
-                <MenuItem Header="Info" HorizontalAlignment="Left" Width="145">
+                <MenuItem Header="Info" HorizontalAlignment="Left" Width="145" Command="{Binding Path=notImplementedError}">
                     <MenuItem.Icon>
                         <Image Source="pack://application:,,,/Resources/information.png" Height="20" Width="20"/>
                     </MenuItem.Icon>

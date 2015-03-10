@@ -1,5 +1,6 @@
 ﻿namespace MemberDatabase
 {
+    using MemberDatabase.View;
     using System.Windows;
     using System.Windows.Controls;
 
@@ -43,6 +44,12 @@
         private void MenuItemClose_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void MenuItemAdd_Click(object sender, RoutedEventArgs e)
+        {
+            var win = new AddMemberView { DataContext = new AddMemberView() };
+            win.ShowDialog();
         }
     }
 }

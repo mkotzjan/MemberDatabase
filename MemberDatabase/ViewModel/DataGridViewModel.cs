@@ -52,6 +52,25 @@
             }
         }
 
+        private ICommand _notImplementedCommand;
+
+        public ICommand notImplementedError
+        {
+            get
+            {
+                if (this._notImplementedCommand == null)
+                {
+                    this._notImplementedCommand = new RelayCommand(param => this.notImplemented());
+                }
+                return this._notImplementedCommand;
+            }
+        }
+
+        private void notImplemented()
+        {
+            System.Windows.MessageBox.Show("Noch nicht implementiert!");
+        }
+
         bool _editModeChecked;
 
         public bool editModeChecked
