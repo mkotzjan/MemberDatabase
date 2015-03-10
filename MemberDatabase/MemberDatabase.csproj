@@ -118,19 +118,19 @@
     <Resource Include="1425830150_299089.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\database_refresh.png" />
+    <Resource Include="Resources\database_refresh.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\exit.png" />
+    <Resource Include="Resources\exit.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\help.png" />
+    <Resource Include="Resources\help.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\information.png" />
+    <Resource Include="Resources\information.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\member_add.png" />
+    <Resource Include="Resources\member_add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
