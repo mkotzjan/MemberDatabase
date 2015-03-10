@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:MemberDatabase.ViewModel" 
         xmlns:Properties="clr-namespace:MemberDatabase.Properties" x:Class="MemberDatabase.DataGridView"
-        Title="MemberDatabase" Height="350" Width="525" WindowState="Maximized"
+        Title="MemberDatabase" Height="575.2" Width="525" WindowState="Maximized"
         DataContext="{DynamicResource DataGridViewModel}">
     <Window.Resources>
         <vm:DataGridViewModel x:Key="DataGridViewModel"/>
@@ -16,7 +16,7 @@
                         <Image Source="pack://application:,,,/Resources/database_refresh.png" Height="20" Width="20" />
                     </MenuItem.Icon>
                 </MenuItem>
-                    <Separator HorizontalAlignment="Left" Width="145"/>
+                <Separator HorizontalAlignment="Left" Width="145"/>
                 <MenuItem Header="Beenden" HorizontalAlignment="Left" Click="MenuItemClose_Click">
                     <MenuItem.Icon>
                         <Image Source="pack://application:,,,/Resources/exit.png" Height="20" Width="20" />
@@ -66,8 +66,37 @@
                     <RowDefinition Height="148*"/>
                     <RowDefinition Height="147*"/>
                 </Grid.RowDefinitions>
-                <GroupBox Header="Jubiläen" Grid.Row="1">
-                    <TextBlock Margin="10" FontWeight="Bold" Text="Geburtstage&#10;&#10;"><Run Text="{Binding birthday}"/><Run FontWeight="Bold" Text="&#10; Mitgliedschaft &#10;&#10;"/><Run Text="{Binding anniversary}"/></TextBlock>
+                <GroupBox Header="Jubiläen" Grid.Row="1" Margin="5">
+                    <Grid Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="26"/>
+                            <RowDefinition Height="18"/>
+                            <RowDefinition Height="18"/>
+                            <RowDefinition Height="18"/>
+                            <RowDefinition Height="18"/>
+                            <RowDefinition Height="18"/>
+                            <RowDefinition Height="26"/>
+                            <RowDefinition Height="18"/>
+                            <RowDefinition Height="18"/>
+                            <RowDefinition Height="18"/>
+                            <RowDefinition Height="18"/>
+                            <RowDefinition Height="18"/>
+                            <RowDefinition Height="18"/>
+                            <RowDefinition Height="18"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Geburtstag" HorizontalAlignment="Left" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="1" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="2" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="3" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="4" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="5" Margin="15,0,0,0"/>
+                        <Label Content="Mitgliedschaft" HorizontalAlignment="Left" Grid.Row="6" FontWeight="Bold"/>
+                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="7" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="8" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="9" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="10" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="11" Margin="15,0,0,0"/>
+                    </Grid>
                 </GroupBox>
             </Grid>
         </Grid>
