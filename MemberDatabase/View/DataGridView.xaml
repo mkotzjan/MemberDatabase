@@ -85,17 +85,17 @@
                             <RowDefinition Height="18"/>
                         </Grid.RowDefinitions>
                         <Label Content="Geburtstag" HorizontalAlignment="Left" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="1" Margin="15,0,0,0"/>
-                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="2" Margin="15,0,0,0"/>
-                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="3" Margin="15,0,0,0"/>
-                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="4" Margin="15,0,0,0"/>
-                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="5" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding birthday[0]}" ToolTip="{Binding birthdayTooltip[0]}" HorizontalAlignment="Left" Grid.Row="1" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding birthday[1]}" ToolTip="{Binding birthdayTooltip[1]}" HorizontalAlignment="Left" Grid.Row="2" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding birthday[2]}" ToolTip="{Binding birthdayTooltip[2]}" HorizontalAlignment="Left" Grid.Row="3" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding birthday[3]}" ToolTip="{Binding birthdayTooltip[3]}" HorizontalAlignment="Left" Grid.Row="4" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding birthday[4]}" ToolTip="{Binding birthdayTooltip[4]}" HorizontalAlignment="Left" Grid.Row="5" Margin="15,0,0,0"/>
                         <Label Content="Mitgliedschaft" HorizontalAlignment="Left" Grid.Row="6" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="7" Margin="15,0,0,0"/>
-                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="8" Margin="15,0,0,0"/>
-                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="9" Margin="15,0,0,0"/>
-                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="10" Margin="15,0,0,0"/>
-                        <TextBlock Text="{Binding}" ToolTip="{Binding}" HorizontalAlignment="Left" Grid.Row="11" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding anniversary[0]}" ToolTip="{Binding anniversaryTooltip[0]}" HorizontalAlignment="Left" Grid.Row="7" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding anniversary[1]}" ToolTip="{Binding anniversaryTooltip[1]}" HorizontalAlignment="Left" Grid.Row="8" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding anniversary[2]}" ToolTip="{Binding anniversaryTooltip[2]}" HorizontalAlignment="Left" Grid.Row="9" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding anniversary[3]}" ToolTip="{Binding anniversaryTooltip[3]}" HorizontalAlignment="Left" Grid.Row="10" Margin="15,0,0,0"/>
+                        <TextBlock Text="{Binding anniversary[4]}" ToolTip="{Binding anniversaryTooltip[4]}" HorizontalAlignment="Left" Grid.Row="11" Margin="15,0,0,0"/>
                     </Grid>
                 </GroupBox>
             </Grid>

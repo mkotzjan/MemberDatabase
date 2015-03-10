@@ -15,10 +15,11 @@
             this.sortedList = member.OrderBy(d => d.accession).ToList<Member>();
             this.today = DateTime.Today;
         }
-        public string nextAnniversary()
+        public Tuple<List<string>, List<string>> nextAnniversary()
         {
             Dictionary<int, int> daysToAnniversary = new Dictionary<int, int>();
-            string output = string.Empty;
+            List<string> anniversarys = new List<string>();
+            List<string> anniversarysTooltip = new List<string>();
             foreach (Member member in this.sortedList)
             {
                 if (member.accession != null)
@@ -50,16 +51,19 @@
                 {
                     days = daysToAnniversary[min] + " Tage";
                 }
-                output = output + "  " + resultMember.firstName + " " + resultMember.lastName + ", " + ((DateTime)resultMember.accession).ToString("dd'.'MM'.'yyyy") + " (" + days + ")\n";
+                anniversarys.Add(resultMember.firstName + " " + resultMember.lastName + " (" + days + ")");
+                anniversarysTooltip.Add(((DateTime)resultMember.birthday).ToString("dd'.'MM'.'yyyy"));
                 daysToAnniversary.Remove(min);
             }
-            return output;
+            return new Tuple<List<string>, List<string>>(anniversarys, anniversarysTooltip);
         }
 
-        public string nextBirthday()
+        public Tuple<List<string>, List<string>> nextBirthday()
         {
             Dictionary<int, int> daysToBirthday = new Dictionary<int, int>();
-            string output = string.Empty;
+            List<string> birthdays = new List<string>();
+            List<string> birthdaysTooltip = new List<string>();
+
             foreach (Member member in this.sortedList)
             {
                 if (member.birthday != null)
@@ -91,10 +95,11 @@
                 {
                     days = daysToBirthday[min] + " Tage";
                 }
-                output = output + "  " + resultMember.firstName + " " + resultMember.lastName + ", " + ((DateTime)resultMember.birthday).ToString("dd'.'MM'.'yyyy") + " (" + days + ")\n";
+                birthdays.Add(resultMember.firstName + " " + resultMember.lastName + " (" + days + ")");
+                birthdaysTooltip.Add(((DateTime)resultMember.birthday).ToString("dd'.'MM'.'yyyy"));
                 daysToBirthday.Remove(min);
             }
-            return output;
+            return new Tuple<List<string>,List<string>>(birthdays, birthdaysTooltip);
         }
     }
 }

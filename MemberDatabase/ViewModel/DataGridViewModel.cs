@@ -13,8 +13,10 @@
     class DataGridViewModel : BaseViewModel
     {
         public List<Member> members { get; set; }
-        public string anniversary { get; set; }
-        public string birthday { get; set; }
+        public List<string> anniversary { get; set; }
+        public List<string> birthday { get; set; }
+        public List<string> anniversaryTooltip { get; set; }
+        public List<string> birthdayTooltip { get; set; }
         
         private Database db;
         private Anniversary an;
@@ -31,11 +33,15 @@
         {
             this.members = this.db.content();
             this.an = new Anniversary(this.members);
-            this.birthday = this.an.nextBirthday();
-            this.anniversary = this.an.nextAnniversary();
+            this.birthday = this.an.nextBirthday().Item1;
+            this.birthdayTooltip = this.an.nextBirthday().Item2;
+            this.anniversary = this.an.nextAnniversary().Item1;
+            this.anniversaryTooltip = this.an.nextAnniversary().Item2;
             this.RaisePropertyChanged("members");
             this.RaisePropertyChanged("anniversary");
             this.RaisePropertyChanged("birthday");
+            this.RaisePropertyChanged("anniversaryToolTip");
+            this.RaisePropertyChanged("birthdayToolTip");
         }
 
 
