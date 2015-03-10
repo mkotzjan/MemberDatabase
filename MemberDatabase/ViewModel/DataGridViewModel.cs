@@ -1,15 +1,15 @@
-﻿using MemberDatabase.Model;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Controls;
-using System.Windows.Input;
-
-namespace MemberDatabase.ViewModel
+﻿namespace MemberDatabase.ViewModel
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Controls;
+    using System.Windows.Input;
+    using MemberDatabase.Model;
+
     class DataGridViewModel : BaseViewModel
     {
         public List<Member> members { get; set; }
@@ -21,21 +21,21 @@ namespace MemberDatabase.ViewModel
 
         public DataGridViewModel()
         {
-            db = new Database();
-            loadDataBase();
-            editModeChecked = false;
-            readOnly = true;
+            this.db = new Database();
+            this.loadDataBase();
+            this.editModeChecked = false;
+            this.readOnly = true;
         }
 
         public void loadDataBase()
         {
-            members = db.content();
-            an = new Anniversary(members);
-            birthday = an.nextBirthday();
-            anniversary = an.nextAnniversary();
-            RaisePropertyChanged("members");
-            RaisePropertyChanged("anniversary");
-            RaisePropertyChanged("birthday");
+            this.members = this.db.content();
+            this.an = new Anniversary(this.members);
+            this.birthday = this.an.nextBirthday();
+            this.anniversary = this.an.nextAnniversary();
+            this.RaisePropertyChanged("members");
+            this.RaisePropertyChanged("anniversary");
+            this.RaisePropertyChanged("birthday");
         }
 
 
@@ -44,11 +44,11 @@ namespace MemberDatabase.ViewModel
         public ICommand loadDatabase {
             get
             {
-                if (_loadCommand == null)
+                if (this._loadCommand == null)
                 {
-                    _loadCommand = new RelayCommand(param => this.loadDataBase());
+                    this._loadCommand = new RelayCommand(param => this.loadDataBase());
                 }
-                return _loadCommand;
+                return this._loadCommand;
             }
         }
 
@@ -58,16 +58,16 @@ namespace MemberDatabase.ViewModel
         {
             get
             {
-                return _editModeChecked;
+                return this._editModeChecked;
             }
 
             set
             {
-                if (_editModeChecked != value)
+                if (this._editModeChecked != value)
                 {
-                    _editModeChecked = value;
-                    RaisePropertyChanged("editMode");
-                    readOnly = !(value);
+                    this._editModeChecked = value;
+                    this.RaisePropertyChanged("editMode");
+                    this.readOnly = !value;
                 }
             }
         }
@@ -78,15 +78,15 @@ namespace MemberDatabase.ViewModel
         {
             get
             {
-                return _readOnly;
+                return this._readOnly;
             }
 
             set
             {
-                if (_readOnly != value)
+                if (this._readOnly != value)
                 {
-                    _readOnly = value;
-                    RaisePropertyChanged("readOnly");
+                    this._readOnly = value;
+                    this.RaisePropertyChanged("readOnly");
                 }
             }
         }

@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-
-namespace MemberDatabase.Model
+﻿namespace MemberDatabase.Model
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+    using System.Windows.Input;
+
     /// <summary>
     /// A command whose sole purpose is to 
     /// relay its functionality to other
@@ -45,8 +45,8 @@ namespace MemberDatabase.Model
             if (execute == null)
                 throw new ArgumentNullException("execute");
 
-            _execute = execute;
-            _canExecute = canExecute;
+            this._execute = execute;
+            this._canExecute = canExecute;
         }
 
         #endregion // Constructors
@@ -56,7 +56,7 @@ namespace MemberDatabase.Model
         [DebuggerStepThrough]
         public bool CanExecute(object parameters)
         {
-            return _canExecute == null ? true : _canExecute(parameters);
+            return this._canExecute == null ? true : this._canExecute(parameters);
         }
 
         public event EventHandler CanExecuteChanged
@@ -67,7 +67,7 @@ namespace MemberDatabase.Model
 
         public void Execute(object parameters)
         {
-            _execute(parameters);
+            this._execute(parameters);
         }
 
         #endregion // ICommand Members

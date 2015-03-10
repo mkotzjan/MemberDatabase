@@ -1,18 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SQLite;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MemberDatabase.Model
+﻿namespace MemberDatabase.Model
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Data.SQLite;
+    using System.IO;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     class Database
     {
         public Database()
         {
-            initializeDatabase();
+            this.initializeDatabase();
         }
 
         private void initializeDatabase()

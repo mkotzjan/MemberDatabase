@@ -1,8 +1,8 @@
-﻿using System.Windows;
-using System.Windows.Controls;
-
-namespace MemberDatabase
+﻿namespace MemberDatabase
 {
+    using System.Windows;
+    using System.Windows.Controls;
+
     /// <summary>
     /// Interaction logic for DataGridView.xaml
     /// </summary>
@@ -10,7 +10,7 @@ namespace MemberDatabase
     {
         public DataGridView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         private void DataGrid_AutoGeneratingColumn(object sender, System.Windows.Controls.DataGridAutoGeneratingColumnEventArgs e)

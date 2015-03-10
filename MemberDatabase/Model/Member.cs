@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MemberDatabase.Model
+﻿namespace MemberDatabase.Model
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
     /// <summary>
     /// Represents a member
     /// </summary>
@@ -31,14 +31,14 @@ namespace MemberDatabase.Model
         {
             get
             {
-                return _firstName;
+                return this._firstName;
             }
             set
             {
-                if (_firstName != value)
+                if (this._firstName != value)
                 {
-                    _firstName = value;
-                    RaisePropertyChanged("FirstName");
+                    this._firstName = value;
+                    this.RaisePropertyChanged("FirstName");
                 }
             }
         }
@@ -51,14 +51,14 @@ namespace MemberDatabase.Model
         {
             get
             {
-                return _lastName;
+                return this._lastName;
             }
             set
             {
-                if (_lastName != value)
+                if (this._lastName != value)
                 {
-                    _lastName = value;
-                    RaisePropertyChanged("LastName");
+                    this._lastName = value;
+                    this.RaisePropertyChanged("LastName");
                 }
             }
         }
@@ -71,14 +71,14 @@ namespace MemberDatabase.Model
         {
             get
             {
-                return _birthday;
+                return this._birthday;
             }
             set
             {
-                if (_birthday != value)
+                if (this._birthday != value)
                 {
-                    _birthday = value;
-                    RaisePropertyChanged("Birthday");
+                    this._birthday = value;
+                    this.RaisePropertyChanged("Birthday");
                 }
             }
         }
@@ -91,14 +91,14 @@ namespace MemberDatabase.Model
         {
             get
             {
-                return _accession;
+                return this._accession;
             }
             set
             {
-                if (_accession != value)
+                if (this._accession != value)
                 {
-                    _accession = value;
-                    RaisePropertyChanged("Accession");
+                    this._accession = value;
+                    this.RaisePropertyChanged("Accession");
                 }
             }
         }
@@ -111,21 +111,21 @@ namespace MemberDatabase.Model
         {
             get
             {
-                return _active;
+                return this._active;
             }
             set
             {
-                if (_active != value)
+                if (this._active != value)
                 {
-                    _active = value;
-                    RaisePropertyChanged("Active");
+                    this._active = value;
+                    this.RaisePropertyChanged("Active");
                 }
             }
         }
 
         void RaisePropertyChanged(string prop)
         {
-            if (PropertyChanged != null) { PropertyChanged(this, new PropertyChangedEventArgs(prop)); }
+            if (this.PropertyChanged != null) { this.PropertyChanged(this, new PropertyChangedEventArgs(prop)); }
         }
         public event PropertyChangedEventHandler PropertyChanged;
     }
