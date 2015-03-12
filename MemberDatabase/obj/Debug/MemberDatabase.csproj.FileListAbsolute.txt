@@ -17,3 +17,4 @@ C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\Debug\Syst
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\Debug\System.Data.SQLite.xml
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\View\AddMemberView.baml
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\View\AddMemberView.g.cs
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\App.baml
