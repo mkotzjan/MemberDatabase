@@ -21,7 +21,7 @@
     {
         public AddMemberView()
         {
-            this.InitializeComponent();
+            //this.InitializeComponent();
         }
     }
 }
