@@ -140,7 +140,7 @@ namespace MemberDatabase.ViewModel
 
         private void saveMember()
         {
-            System.Windows.MessageBox.Show(firstName + ", " + lastName);
+            System.Windows.MessageBox.Show("Mitglied: " + firstName + ", " + lastName);
         }
 
         /// <summary>
