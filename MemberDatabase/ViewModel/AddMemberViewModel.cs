@@ -19,11 +19,11 @@ namespace MemberDatabase.ViewModel
     class AddMemberViewModel : BaseViewModel
     {
         // Private variables for displayed fields
-        private string firstNameP;
-        private string lastNameP;
+        private string firstNameP = string.Empty;
+        private string lastNameP = string.Empty;
         private DateTime? birthdayP;
         private DateTime? accessionP;
-        private bool activeP;
+        private bool activeP = true;
 
         private ICommand saveCommandP;
 
@@ -80,7 +80,7 @@ namespace MemberDatabase.ViewModel
 
             set
             {
-                if (birthdayP != Convert.ToDateTime(value));
+                if (birthdayP != Convert.ToDateTime(value))
                 {
                     birthdayP = Convert.ToDateTime(value);
                     RaisePropertyChanged("birthday");
@@ -101,7 +101,7 @@ namespace MemberDatabase.ViewModel
 
             set
             {
-                if (accessionP != Convert.ToDateTime(value));
+                if (accessionP != Convert.ToDateTime(value))
                 {
                     accessionP = Convert.ToDateTime(value);
                     RaisePropertyChanged("accession");
@@ -148,9 +148,9 @@ namespace MemberDatabase.ViewModel
         /// </summary>
         public AddMemberViewModel()
         {
-            firstNameP = string.Empty;
-            lastNameP = string.Empty;
-            activeP = true;
+            firstName = "Test";
+            lastName = string.Empty;
+            active = true;
         }
     }
 }

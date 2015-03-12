@@ -26,11 +26,11 @@
         <Label Content="Geburtsdatum" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="2" Height="26" Width="86"/>
         <Label Content="Beitrittsdatum" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="3" Height="26" Width="85"/>
         <Label Content="Aktiv" Margin="10,0,0,0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78"/>
-        <TextBox x:Name="firstNameBox" Grid.Column="1" TextWrapping="Wrap" MaxLines="1" Margin="1" Text="{Binding firstName, UpdateSourceTrigger=PropertyChanged}"/>
-        <TextBox x:Name="lastNameBox" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" MaxLines="1" Margin="1" Text="{Binding lastName}"/>
-        <TextBox x:Name="birthdayBox" Grid.Column="1" TextWrapping="Wrap" Margin="1" Grid.Row="2" MaxLines="1" Text="{Binding birthday}"/>
-        <TextBox x:Name="accessionBox" Grid.Column="1" TextWrapping="Wrap" Grid.Row="3" MaxLines="1" Margin="1" Text="{Binding accession}"/>
-        <Button Content="Speichern" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,0,10" Grid.Row="5" VerticalAlignment="Bottom" Width="75" Command="{Binding saveCommand}"/>
-        <CheckBox Content="" Grid.Column="1" Margin="0,5" Grid.Row="4" HorizontalAlignment="Right" Width="15" Height="15" IsChecked="{Binding active}"/>
+        <TextBox x:Name="firstNameBox" Grid.Column="1" TextWrapping="Wrap" MaxLines="1" Margin="1" Text="{Binding Path=firstName, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox x:Name="lastNameBox" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" MaxLines="1" Margin="1" Text="{Binding Path=lastName}"/>
+        <TextBox x:Name="birthdayBox" Grid.Column="1" TextWrapping="Wrap" Margin="1" Grid.Row="2" MaxLines="1" Text="{Binding Path=birthday}"/>
+        <TextBox x:Name="accessionBox" Grid.Column="1" TextWrapping="Wrap" Grid.Row="3" MaxLines="1" Margin="1" Text="{Binding Path=accession}"/>
+        <CheckBox Grid.Column="1" Margin="0,5" Grid.Row="4" HorizontalAlignment="Right" Width="15" Height="15" IsChecked="{Binding Path=active}"/>
+        <Button Content="Speichern" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,0,10" Grid.Row="5" VerticalAlignment="Bottom" Width="75" Command="{Binding Path=saveCommand, Mode=Default}"/>
     </Grid>
 </Window>

@@ -32,7 +32,7 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="?">
-                <MenuItem Header="Hilfe" HorizontalAlignment="Left" Width="145" Command="{Binding Path=notImplementedError}">
+                <MenuItem Header="Hilfe" HorizontalAlignment="Left" Width="145" Command="{Binding Path=notImplementedError}">s
                     <MenuItem.Icon>
                         <Image Source="pack://application:,,,/Resources/help.png" Height="20" Width="20" />
                     </MenuItem.Icon>
