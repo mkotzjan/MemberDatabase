@@ -63,7 +63,24 @@
 
         public void add(Member member)
         {
+            string sql = "insert into members values ('" + member.firstName + "', '" + member.lastName + "', strftime('%s', '" + convertDate(Convert.ToDateTime(member.birthday).ToString("dd'.'MM'.'yyyy")) + "'), strftime('%s', '" + convertDate(Convert.ToDateTime(member.accession).ToString("dd'.'MM'.'yyyy")) + "'), '" + Convert.ToInt32(member.active) + "');";
+            SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
+            command.ExecuteNonQuery();
+        }
 
+        private static string convertDate(string date)
+        {
+            if (date == string.Empty)
+            {
+                return date;
+            }
+            string[] parts = date.Split(new Char[] { '.' });
+            if (parts.Length != 3)
+            {
+                return string.Empty;
+            }
+            date = parts[2] + "-" + parts[1] + "-" + parts[0];
+            return date;
         }
     }
 }

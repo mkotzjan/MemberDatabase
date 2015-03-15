@@ -26,6 +26,7 @@ namespace MemberDatabase.ViewModel
         private bool activeP = true;
 
         private ICommand saveCommandP;
+        private Database db;
 
         /// <summary>
         /// String firstName. Contains the first name of the new member.
@@ -141,7 +142,7 @@ namespace MemberDatabase.ViewModel
         private void saveMember()
         {
             Member member = new Member { firstName = firstNameP, lastName = lastNameP, birthday = birthdayP, accession = accessionP, active = activeP };
-            
+            db.add(member);
         }
 
         /// <summary>
@@ -152,6 +153,7 @@ namespace MemberDatabase.ViewModel
             firstName = "Test";
             lastName = string.Empty;
             active = true;
+            db = new Database();
         }
     }
 }
