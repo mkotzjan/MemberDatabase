@@ -41,7 +41,7 @@ namespace MemberDatabase.ViewModel
             {
                 if (firstNameP != value)
                 {
-                    firstNameP = value;
+                   firstNameP = value;
                     RaisePropertyChanged("firstName");
                 }
             }
@@ -140,7 +140,8 @@ namespace MemberDatabase.ViewModel
 
         private void saveMember()
         {
-            System.Windows.MessageBox.Show("Mitglied: " + firstName + ", " + lastName);
+            Member member = new Member { firstName = firstNameP, lastName = lastNameP, birthday = birthdayP, accession = accessionP, active = activeP };
+            
         }
 
         /// <summary>
