@@ -60,5 +60,10 @@
             }
             return importedContend;
         }
+
+        public void add(Member member)
+        {
+
+        }
     }
 }
