@@ -2,4 +2,4 @@
 A member database application
 
 Check out the QT version in c++
-@cwansart
+https://github.com/cwansart/MemberDatabaseQt
