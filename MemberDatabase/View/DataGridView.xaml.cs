@@ -48,7 +48,7 @@
 
         private void MenuItemAdd_Click(object sender, RoutedEventArgs e)
         {
-            var win = new AddMemberView { DataContext = new AddMemberView() };
+            var win = new AddMemberView();
             win.ShowDialog();
         }
     }
