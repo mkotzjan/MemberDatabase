@@ -12,14 +12,94 @@
 
     class DataGridViewModel : BaseViewModel
     {
-        public List<Member> members { get; set; }
-        public List<string> anniversary { get; set; }
-        public List<string> birthday { get; set; }
-        public List<string> anniversaryTooltip { get; set; }
-        public List<string> birthdayTooltip { get; set; }
-        
+        private List<Member> membersP;
+        private List<string> anniversaryP;
+        private List<string> birthdayP;
+        private List<string> anniversaryTooltipP;
+        private List<string> birthdayTooltipP;
         private Database db;
         private Anniversary an;
+
+        public List<Member> members
+        { 
+            get
+            {
+                return membersP;
+            }
+            
+            set
+            {
+                if (value != membersP)
+                {
+                    membersP = value;
+                    RaisePropertyChanged("members");
+                }
+            }
+        }
+        public List<string> anniversary
+        { 
+            get
+            {
+                return anniversaryP;
+            }
+
+            set
+            {
+                if (value != anniversaryP)
+                {
+                    anniversaryP = value;
+                    RaisePropertyChanged("anniversary");
+                }
+            }
+        }
+        public List<string> birthday
+        {
+            get
+            {
+                return birthdayP;
+            }
+
+            set
+            {
+                if (value != birthdayP)
+                {
+                    birthdayP = value;
+                    RaisePropertyChanged("birthday");
+                }
+            }
+        }
+        public List<string> anniversaryTooltip
+        {
+            get
+            {
+                return anniversaryTooltipP;
+            }
+
+            set
+            {
+                if (value != anniversaryTooltipP)
+                {
+                    anniversaryTooltipP = value;
+                    RaisePropertyChanged("anniversaryTooltip");
+                }
+            }
+        }
+        public List<string> birthdayTooltip
+        {
+            get
+            {
+                return birthdayTooltipP;
+            }
+
+            set
+            {
+                if (value != birthdayTooltipP)
+                {
+                    birthdayTooltipP = value;
+                    RaisePropertyChanged("birthdayTooltip");
+                }
+            }
+        }
 
         public DataGridViewModel()
         {
@@ -37,11 +117,6 @@
             this.birthdayTooltip = this.an.nextBirthday().Item2;
             this.anniversary = this.an.nextAnniversary().Item1;
             this.anniversaryTooltip = this.an.nextAnniversary().Item2;
-            this.RaisePropertyChanged("members");
-            this.RaisePropertyChanged("anniversary");
-            this.RaisePropertyChanged("birthday");
-            this.RaisePropertyChanged("anniversaryToolTip");
-            this.RaisePropertyChanged("birthdayToolTip");
         }
 
 
