@@ -128,5 +128,12 @@
             if (this.PropertyChanged != null) { this.PropertyChanged(this, new PropertyChangedEventArgs(prop)); }
         }
         public event PropertyChangedEventHandler PropertyChanged;
+
+        public Member Clone()
+        {
+            Member member = new Member { firstName = _firstName, lastName = _lastName, birthday = _birthday, accession = _accession, active = _active };
+            member.setID(_id);
+            return member;
+        }
     }
 }

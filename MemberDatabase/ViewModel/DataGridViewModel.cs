@@ -112,7 +112,12 @@
         public void loadDataBase()
         {
             this.members = this.db.content();
-            this.an = new Anniversary(this.members);
+            List<Member> memberCopy = new List<Member>();
+            foreach (Member member in members)
+	        {
+		        memberCopy.Add(member.Clone());
+	        }
+            this.an = new Anniversary(memberCopy);
             this.birthday = this.an.nextBirthday().Item1;
             this.birthdayTooltip = this.an.nextBirthday().Item2;
             this.anniversary = this.an.nextAnniversary().Item1;
