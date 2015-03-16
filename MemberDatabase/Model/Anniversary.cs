@@ -68,11 +68,12 @@
             {
                 if (member.birthday != null)
                 {
-                    member.birthday = member.birthday.Value.AddYears(this.today.Year - member.birthday.Value.Year);
-                    if (member.birthday < this.today)
-                        member.birthday = member.birthday.Value.AddYears(1);
+                    DateTime calcBirthday = new DateTime();
+                    calcBirthday = member.birthday.Value.AddYears(this.today.Year - member.birthday.Value.Year);
+                    if (calcBirthday < this.today)
+                        calcBirthday = calcBirthday.AddYears(1);
 
-                    daysToBirthday.Add(member.getID(), (member.birthday.Value - this.today).Days);
+                    daysToBirthday.Add(member.getID(), (calcBirthday - this.today).Days);
                 }
             }
 
@@ -106,6 +107,7 @@
         {
             int years = today.Year - date.Year;
             if (today < date.AddYears(years)) years--;
+            years++;
 
             return years.ToString();
         }
