@@ -31,6 +31,14 @@
         <TextBox x:Name="birthdayBox" Grid.Column="1" TextWrapping="Wrap" Margin="1" Grid.Row="2" MaxLines="1" Text="{Binding Path=birthday}"/>
         <TextBox x:Name="accessionBox" Grid.Column="1" TextWrapping="Wrap" Grid.Row="3" MaxLines="1" Margin="1" Text="{Binding Path=accession}"/>
         <CheckBox Grid.Column="1" Margin="0,5" Grid.Row="4" HorizontalAlignment="Right" Width="15" Height="15" IsChecked="{Binding Path=active}"/>
-        <Button Content="Speichern" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,0,10" Grid.Row="5" VerticalAlignment="Bottom" Width="75" Command="{Binding Path=saveCommand, Mode=Default}"/>
+        <Button HorizontalAlignment="Right" Margin="0,0,12,10" Grid.Row="5" VerticalAlignment="Bottom" Width="75" Command="{Binding Path=saveCommand, Mode=Default}" Height="22" Content="Speichern"/>
+        <Grid Grid.Column="1" Margin="0" Grid.Row="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="73*"/>
+                <ColumnDefinition Width="39*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Speichern und Schließen" HorizontalAlignment="Right" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="139" Command="{Binding saveCommand, Mode=Default}" Height="22"/>
+            <Button Content="Abbrechen" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Command="{Binding saveCommand, Mode=Default}" Grid.Column="1" Margin="0,0,-7,10"/>
+        </Grid>
     </Grid>
 </Window>
