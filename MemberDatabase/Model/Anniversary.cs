@@ -24,11 +24,12 @@
             {
                 if (member.accession != null)
                 {
-                    member.accession = member.accession.Value.AddYears(this.today.Year - member.accession.Value.Year);
-                    if (member.accession < this.today)
-                        member.accession = member.accession.Value.AddYears(1);
+                    DateTime calcAccession = new DateTime();
+                    calcAccession = member.accession.Value.AddYears(this.today.Year - member.accession.Value.Year);
+                    if (calcAccession < this.today)
+                        calcAccession = calcAccession.AddYears(1);
 
-                    daysToAnniversary.Add(member.getID(), (member.accession.Value - this.today).Days);
+                    daysToAnniversary.Add(member.getID(), (calcAccession - this.today).Days);
                 }
             }
 
