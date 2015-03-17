@@ -7,6 +7,7 @@ namespace MemberDatabase.ViewModel
     using MemberDatabase.Model;
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
@@ -25,8 +26,10 @@ namespace MemberDatabase.ViewModel
         private DateTime? accessionP;
         private bool activeP = true;
         private string emailP;
+        private ObservableCollection<DateItem> examList;
 
         private ICommand saveCommandP;
+        private ICommand addExamDateP;
         private Database db;
 
         /// <summary>
@@ -149,10 +152,48 @@ namespace MemberDatabase.ViewModel
             }
         }
 
+        public ICommand addExamDate
+        {
+            get
+            {
+                if (this.addExamDateP == null)
+                {
+                    this.addExamDateP = new RelayCommand(param => this.addExam());
+                }
+                return this.addExamDateP;
+            }
+        }
+
+        public ObservableCollection<DateItem> exam
+        {
+            get
+            {
+                return examList;
+            }
+
+            set
+            {
+                if (value != examList)
+                {
+                    examList = value;
+                    RaisePropertyChanged("exam");
+                }
+            }
+        }
+
         private void saveMember()
         {
             Member member = new Member { firstName = firstNameP, lastName = lastNameP, birthday = birthdayP, accession = accessionP, active = activeP };
             db.add(member);
+        }
+
+        private void addExam()
+        {
+            if (examList[examList.Count - 1].date != null)
+            {
+                examList.Add(new DateItem());
+                RaisePropertyChanged("exam");
+            }
         }
 
         /// <summary>
@@ -165,6 +206,8 @@ namespace MemberDatabase.ViewModel
             active = true;
             email = string.Empty;
             db = new Database();
+            exam = new ObservableCollection<DateItem>();
+            exam.Add(new DateItem());
         }
     }
 }
