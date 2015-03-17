@@ -11,8 +11,9 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" MinHeight="157"/>
-            <RowDefinition Height="51*"/>
-            <RowDefinition Height="53*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
             <RowDefinition Height="40*"/>
         </Grid.RowDefinitions>
         <Grid Margin="0,6,20,1">
@@ -57,7 +58,7 @@
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="100">
-                    <ItemsControl x:Name="DateItemsControl" ItemsSource="{Binding Path=exam}">
+                    <ItemsControl x:Name="ExamDateItemsControl" ItemsSource="{Binding Path=exam}">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
                                 <Grid Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -73,11 +74,37 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
-                <Button x:Name="AddDateButton" Content="Prüfung hinzufügen" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Command="{Binding addExamDate, Mode=Default}"/>
+                <Button x:Name="AddExamButton" Content="Prüfung hinzufügen" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Command="{Binding addExamDate, Mode=Default}"/>
             </Grid>
         </Expander>
-        <Button HorizontalAlignment="Right" Margin="0,0,259,1" VerticalAlignment="Bottom" Width="75" Command="{Binding saveCommand, Mode=Default}" Height="22" Content="Speichern" Grid.Row="3"/>
-        <Button Content="Speichern und Schließen" HorizontalAlignment="Right" Margin="0,0,115,1" VerticalAlignment="Bottom" Width="139" Command="{Binding saveCommand, Mode=Default}" Height="22" Grid.Row="3"/>
-        <Button Content="Abbrechen" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="0,0,20,1" Grid.Row="3" Height="22" IsCancel="True"/>
+        <Expander Header="Lehrgänge" Margin="10,1,20,1" Grid.Row="3">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="100">
+                    <ItemsControl x:Name="SeminarDateItemsControl" ItemsSource="{Binding Path=seminar}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <DatePicker Grid.Column="0" SelectedDate="{Binding date}" Margin="1"/>
+                                    <TextBox Text="{Binding information}" Grid.Column="1" Margin="1" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+                <Button x:Name="AddSeminarButton" Content="Lehrgang hinzufügen" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Command="{Binding addSeminarDate, Mode=Default}"/>
+            </Grid>
+        </Expander>
+        <Button HorizontalAlignment="Right" Margin="0,0,259,1" VerticalAlignment="Bottom" Width="75" Command="{Binding saveCommand, Mode=Default}" Height="22" Content="Speichern" Grid.Row="4"/>
+        <Button Content="Speichern und Schließen" HorizontalAlignment="Right" Margin="0,0,115,1" VerticalAlignment="Bottom" Width="139" Command="{Binding saveCommand, Mode=Default}" Height="22" Grid.Row="4"/>
+        <Button Content="Abbrechen" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="0,0,20,1" Grid.Row="4" Height="22" IsCancel="True"/>
     </Grid>
 </Window>

@@ -27,11 +27,13 @@ namespace MemberDatabase.ViewModel
         private bool activeP = true;
         private string emailP;
         private ObservableCollection<DateItem> examListP;
+        private ObservableCollection<DateItem> seminarListP;
         private int selectedGroupP;
         private string addressP;
 
         private ICommand saveCommandP;
         private ICommand addExamDateP;
+        private ICommand addSeminarDateP;
         private Database db;
 
         /// <summary>
@@ -166,6 +168,18 @@ namespace MemberDatabase.ViewModel
             }
         }
 
+        public ICommand addSeminarDate
+        {
+            get
+            {
+                if (this.addSeminarDateP == null)
+                {
+                    this.addSeminarDateP = new RelayCommand(param => this.addSeminar());
+                }
+                return this.addSeminarDateP;
+            }
+        }
+
         public ObservableCollection<DateItem> exam
         {
             get
@@ -179,6 +193,23 @@ namespace MemberDatabase.ViewModel
                 {
                     examListP = value;
                     RaisePropertyChanged("exam");
+                }
+            }
+        }
+
+        public ObservableCollection<DateItem> seminar
+        {
+            get
+            {
+                return seminarListP;
+            }
+
+            set
+            {
+                if (value != seminarListP)
+                {
+                    seminarListP = value;
+                    RaisePropertyChanged("seminar");
                 }
             }
         }
@@ -232,6 +263,15 @@ namespace MemberDatabase.ViewModel
             }
         }
 
+        private void addSeminar()
+        {
+            if (seminarListP[seminarListP.Count - 1].date != null)
+            {
+                seminarListP.Add(new DateItem());
+                RaisePropertyChanged("seminar");
+            }
+        }
+
         /// <summary>
         /// Initializes a new instance of the AddMemberViewModel class
         /// </summary>
@@ -246,6 +286,8 @@ namespace MemberDatabase.ViewModel
             address = string.Empty;
             exam = new ObservableCollection<DateItem>();
             exam.Add(new DateItem());
+            seminar = new ObservableCollection<DateItem>();
+            seminar.Add(new DateItem());
             selected = 0;
         }
     }
