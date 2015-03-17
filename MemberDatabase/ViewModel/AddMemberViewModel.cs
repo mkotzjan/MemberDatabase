@@ -26,8 +26,9 @@ namespace MemberDatabase.ViewModel
         private DateTime? accessionP;
         private bool activeP = true;
         private string emailP;
-        private ObservableCollection<DateItem> examList;
-        private int selectedGroup;
+        private ObservableCollection<DateItem> examListP;
+        private int selectedGroupP;
+        private string addressP;
 
         private ICommand saveCommandP;
         private ICommand addExamDateP;
@@ -169,14 +170,14 @@ namespace MemberDatabase.ViewModel
         {
             get
             {
-                return examList;
+                return examListP;
             }
 
             set
             {
-                if (value != examList)
+                if (value != examListP)
                 {
-                    examList = value;
+                    examListP = value;
                     RaisePropertyChanged("exam");
                 }
             }
@@ -186,15 +187,32 @@ namespace MemberDatabase.ViewModel
         {
             get
             {
-                return selectedGroup;
+                return selectedGroupP;
             }
 
             set
             {
-                if (value != selectedGroup)
+                if (value != selectedGroupP)
                 {
-                    selectedGroup = value;
+                    selectedGroupP = value;
                     RaisePropertyChanged("selected");
+                }
+            }
+        }
+
+        public string address
+        {
+            get
+            {
+                return addressP;
+            }
+
+            set
+            {
+                if (value != addressP)
+                {
+                    addressP = value;
+                    RaisePropertyChanged("address");
                 }
             }
         }
@@ -207,9 +225,9 @@ namespace MemberDatabase.ViewModel
 
         private void addExam()
         {
-            if (examList[examList.Count - 1].date != null)
+            if (examListP[examListP.Count - 1].date != null)
             {
-                examList.Add(new DateItem());
+                examListP.Add(new DateItem());
                 RaisePropertyChanged("exam");
             }
         }
@@ -219,11 +237,13 @@ namespace MemberDatabase.ViewModel
         /// </summary>
         public AddMemberViewModel()
         {
+            db = new Database();
+
             firstName = string.Empty;
             lastName = string.Empty;
             active = true;
             email = string.Empty;
-            db = new Database();
+            address = string.Empty;
             exam = new ObservableCollection<DateItem>();
             exam.Add(new DateItem());
             selected = 0;

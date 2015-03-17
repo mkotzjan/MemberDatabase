@@ -40,15 +40,17 @@
             <TextBox x:Name="lastNameBox" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" MaxLines="1" Margin="1" Text="{Binding Path=lastName}"/>
             <DatePicker Grid.Column="1" Margin="1" Grid.Row="2" SelectedDate="{Binding Path=birthday}"/>
             <DatePicker Grid.Column="1" Margin="1" Grid.Row="3" SelectedDate="{Binding Path=accession}"/>
-            <ComboBox x:Name="groupComboBox" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" SelectedIndex="{Binding Path=selected}">
+            <ComboBox x:Name="groupComboBox" Grid.Column="1" Margin="1" Grid.Row="4" HorizontalAlignment="Left" SelectedIndex="{Binding Path=selected}">
                 <ComboBoxItem Content="Erwachsene"/>
                 <ComboBoxItem Content="Kinder"/>
             </ComboBox>
             <CheckBox Grid.Column="1" Margin="1,5,0,5" Grid.Row="5" HorizontalAlignment="Left" Width="15" Height="15" IsChecked="{Binding Path=active}"/>
             <TextBox x:Name="emailBox" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" MaxLines="1" Margin="1" Text="{Binding Path=email}"/>
         </Grid>
-        <Expander Header="Adresse" Margin="10,1,20,1" Grid.Row="1"/>
-        <Expander Header="Test" Margin="10,1,20,1" Grid.Row="2">
+        <Expander Header="Adresse" Margin="10,1,20,1" Grid.Row="1">
+            <TextBox x:Name="adressBox" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" MaxHeight="80" AcceptsReturn="True" MinHeight="50" Text="{Binding Path=address}"/>
+        </Expander>
+        <Expander Header="Prüfungen" Margin="10,1,20,1" Grid.Row="2">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
