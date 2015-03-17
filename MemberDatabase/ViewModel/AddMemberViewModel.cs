@@ -19,11 +19,12 @@ namespace MemberDatabase.ViewModel
     class AddMemberViewModel : BaseViewModel
     {
         // Private variables for displayed fields
-        private string firstNameP = string.Empty;
-        private string lastNameP = string.Empty;
+        private string firstNameP;
+        private string lastNameP;
         private DateTime? birthdayP;
         private DateTime? accessionP;
         private bool activeP = true;
+        private string emailP;
 
         private ICommand saveCommandP;
         private Database db;
@@ -119,6 +120,23 @@ namespace MemberDatabase.ViewModel
             }
         }
 
+        public string email
+        {
+            get
+            {
+                return emailP;
+            }
+
+            set
+            {
+                if (emailP != value)
+                {
+                    emailP = value;
+                    RaisePropertyChanged("email");
+                }
+            }
+        }
+
         public ICommand saveCommand
         {
             get
@@ -142,9 +160,10 @@ namespace MemberDatabase.ViewModel
         /// </summary>
         public AddMemberViewModel()
         {
-            firstName = "Test";
+            firstName = string.Empty;
             lastName = string.Empty;
             active = true;
+            email = string.Empty;
             db = new Database();
         }
     }
