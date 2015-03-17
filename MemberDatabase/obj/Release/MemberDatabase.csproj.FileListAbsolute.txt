@@ -17,3 +17,4 @@ C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Release\Me
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Release\MemberDatabase.csproj.GenerateResource.Cache
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Release\MemberDatabase.exe
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Release\MemberDatabase.pdb
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Release\MemberDatabase.csprojResolveAssemblyReference.cache
