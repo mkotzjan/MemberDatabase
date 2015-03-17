@@ -3,20 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:MemberDatabase.ViewModel" 
         xmlns:Properties="clr-namespace:MemberDatabase.Properties" x:Class="MemberDatabase.View.AddMemberView"
-        Title="Mitglied hinzufügen" Height="308" Width="350" ResizeMode="NoResize"
+        Title="Mitglied hinzufügen" Height="329" Width="350" ResizeMode="NoResize"
         DataContext="{DynamicResource AddMemberViewModel}" SizeToContent="Height">
     <Window.Resources>
         <vm:AddMemberViewModel x:Key="AddMemberViewModel"/>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="39*"/>
+            <RowDefinition Height="Auto" MinHeight="157"/>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="53*"/>
             <RowDefinition Height="40*"/>
-            <RowDefinition Height="30*"/>
         </Grid.RowDefinitions>
-        <Grid Margin="0,5,20,0" Height="129" VerticalAlignment="Top">
+        <Grid Margin="0,6,20,1">
             <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
                 <RowDefinition Height="25"/>
                 <RowDefinition Height="25"/>
                 <RowDefinition Height="25"/>
@@ -32,17 +33,19 @@
             <Label Content="Geburtsdatum:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="2" Height="26" Width="86"/>
             <Label Content="Beitrittsdatum:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="3" Height="26" Width="85"/>
             <Label Content="Aktiv:" Margin="10,0,0,0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78"/>
+            <Label Content="E-Mail:" Margin="10,0,0,0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBox x:Name="firstNameBox" Grid.Column="1" TextWrapping="Wrap" MaxLines="1" Margin="1" Text="{Binding Path=firstName, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBox x:Name="lastNameBox" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" MaxLines="1" Margin="1" Text="{Binding Path=lastName}"/>
-            <CheckBox Grid.Column="1" Margin="0,5" Grid.Row="4" HorizontalAlignment="Right" Width="15" Height="15" IsChecked="{Binding Path=active}" RenderTransformOrigin="-1.4,-0.067"/>
+            <CheckBox Grid.Column="1" Margin="0,5" Grid.Row="4" HorizontalAlignment="Right" Width="15" Height="15" IsChecked="{Binding Path=active}"/>
+            <TextBox x:Name="emailBox" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" MaxLines="1" Margin="1" Text="{Binding Path=email}"/>
             <DatePicker Grid.Column="1" Margin="1" Grid.Row="2" SelectedDate="{Binding Path=birthday}"/>
             <DatePicker Grid.Column="1" Margin="1" Grid.Row="3" SelectedDate="{Binding Path=accession}"/>
         </Grid>
-        <Expander Header="Adresse" Margin="10,0,20,0" Grid.Row="1" IsExpanded="True"/>
-        <Expander Header="Test" Margin="10,0,20,0" Grid.Row="2">
+        <Expander Header="Adresse" Margin="10,1,20,1" Grid.Row="1"/>
+        <Expander Header="Test" Margin="10,1,20,1" Grid.Row="2">
         </Expander>
         <Button HorizontalAlignment="Right" Margin="0,0,259,1" VerticalAlignment="Bottom" Width="75" Command="{Binding saveCommand, Mode=Default}" Height="22" Content="Speichern" Grid.Row="3"/>
         <Button Content="Speichern und Schließen" HorizontalAlignment="Right" Margin="0,0,115,1" VerticalAlignment="Bottom" Width="139" Command="{Binding saveCommand, Mode=Default}" Height="22" Grid.Row="3"/>
-        <Button Content="Abbrechen" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Command="{Binding saveCommand, Mode=Default}" Margin="0,0,20,1" Grid.Row="3" Height="22"/>
+        <Button Content="Abbrechen" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="0,0,20,1" Grid.Row="3" Height="22" IsCancel="True" IsDefault="True"/>
     </Grid>
 </Window>
