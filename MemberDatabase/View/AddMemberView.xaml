@@ -23,6 +23,7 @@
                 <RowDefinition Height="25"/>
                 <RowDefinition Height="25"/>
                 <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100"/>
@@ -32,14 +33,19 @@
             <Label Content="Nachname:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="26" Width="70" Grid.Row="1"/>
             <Label Content="Geburtsdatum:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="2" Height="26" Width="86"/>
             <Label Content="Beitrittsdatum:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="3" Height="26" Width="85"/>
-            <Label Content="Aktiv:" Margin="10,0,0,0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78"/>
-            <Label Content="E-Mail:" Margin="10,0,0,0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Label Content="Gruppe:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="4" Height="26"/>
+            <Label Content="Aktiv:" Margin="10,0,0,0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78"/>
+            <Label Content="E-Mail:" Margin="10,0,0,0" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <TextBox x:Name="firstNameBox" Grid.Column="1" TextWrapping="Wrap" MaxLines="1" Margin="1" Text="{Binding Path=firstName, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBox x:Name="lastNameBox" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" MaxLines="1" Margin="1" Text="{Binding Path=lastName}"/>
-            <CheckBox Grid.Column="1" Margin="0,5" Grid.Row="4" HorizontalAlignment="Right" Width="15" Height="15" IsChecked="{Binding Path=active}"/>
-            <TextBox x:Name="emailBox" Grid.Column="1" Grid.Row="5" TextWrapping="Wrap" MaxLines="1" Margin="1" Text="{Binding Path=email}"/>
             <DatePicker Grid.Column="1" Margin="1" Grid.Row="2" SelectedDate="{Binding Path=birthday}"/>
             <DatePicker Grid.Column="1" Margin="1" Grid.Row="3" SelectedDate="{Binding Path=accession}"/>
+            <ComboBox x:Name="groupComboBox" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" SelectedIndex="{Binding Path=selected}">
+                <ComboBoxItem Content="Erwachsene"/>
+                <ComboBoxItem Content="Kinder"/>
+            </ComboBox>
+            <CheckBox Grid.Column="1" Margin="1,5,0,5" Grid.Row="5" HorizontalAlignment="Left" Width="15" Height="15" IsChecked="{Binding Path=active}"/>
+            <TextBox x:Name="emailBox" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" MaxLines="1" Margin="1" Text="{Binding Path=email}"/>
         </Grid>
         <Expander Header="Adresse" Margin="10,1,20,1" Grid.Row="1"/>
         <Expander Header="Test" Margin="10,1,20,1" Grid.Row="2">

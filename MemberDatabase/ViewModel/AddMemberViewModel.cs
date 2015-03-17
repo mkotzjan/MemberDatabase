@@ -27,6 +27,7 @@ namespace MemberDatabase.ViewModel
         private bool activeP = true;
         private string emailP;
         private ObservableCollection<DateItem> examList;
+        private int selectedGroup;
 
         private ICommand saveCommandP;
         private ICommand addExamDateP;
@@ -181,6 +182,23 @@ namespace MemberDatabase.ViewModel
             }
         }
 
+        public int selected
+        {
+            get
+            {
+                return selectedGroup;
+            }
+
+            set
+            {
+                if (value != selectedGroup)
+                {
+                    selectedGroup = value;
+                    RaisePropertyChanged("selected");
+                }
+            }
+        }
+
         private void saveMember()
         {
             Member member = new Member { firstName = firstNameP, lastName = lastNameP, birthday = birthdayP, accession = accessionP, active = activeP };
@@ -208,6 +226,7 @@ namespace MemberDatabase.ViewModel
             db = new Database();
             exam = new ObservableCollection<DateItem>();
             exam.Add(new DateItem());
+            selected = 0;
         }
     }
 }
