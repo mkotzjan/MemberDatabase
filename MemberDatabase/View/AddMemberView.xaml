@@ -29,18 +29,17 @@
             </Grid.ColumnDefinitions>
             <Label Content="Vorname:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="26" Width="61"/>
             <Label Content="Nachname:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="26" Width="70" Grid.Row="1"/>
-            <Label Content="Geburtsdatum" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="2" Height="26" Width="86"/>
-            <Label Content="Beitrittsdatum" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="3" Height="26" Width="85"/>
-            <Label Content="Aktiv" Margin="10,0,0,0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78"/>
+            <Label Content="Geburtsdatum:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="2" Height="26" Width="86"/>
+            <Label Content="Beitrittsdatum:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="3" Height="26" Width="85"/>
+            <Label Content="Aktiv:" Margin="10,0,0,0" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78"/>
             <TextBox x:Name="firstNameBox" Grid.Column="1" TextWrapping="Wrap" MaxLines="1" Margin="1" Text="{Binding Path=firstName, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBox x:Name="lastNameBox" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" MaxLines="1" Margin="1" Text="{Binding Path=lastName}"/>
-            <TextBox x:Name="birthdayBox" Grid.Column="1" TextWrapping="Wrap" Margin="1" Grid.Row="2" MaxLines="1" Text="{Binding Path=birthday}"/>
-            <TextBox x:Name="accessionBox" Grid.Column="1" TextWrapping="Wrap" Grid.Row="3" MaxLines="1" Margin="1" Text="{Binding Path=accession}"/>
             <CheckBox Grid.Column="1" Margin="0,5" Grid.Row="4" HorizontalAlignment="Right" Width="15" Height="15" IsChecked="{Binding Path=active}" RenderTransformOrigin="-1.4,-0.067"/>
+            <DatePicker Grid.Column="1" Margin="1" Grid.Row="2" SelectedDate="{Binding Path=birthday}"/>
+            <DatePicker Grid.Column="1" Margin="1" Grid.Row="3" SelectedDate="{Binding Path=accession}"/>
         </Grid>
-        <Expander Header="Adresse" Margin="10,0,20,0" Grid.Row="1">
-        </Expander>
-        <Expander Header="Adresse" Margin="10,0,20,0" Grid.Row="2">
+        <Expander Header="Adresse" Margin="10,0,20,0" Grid.Row="1" IsExpanded="True"/>
+        <Expander Header="Test" Margin="10,0,20,0" Grid.Row="2">
         </Expander>
         <Button HorizontalAlignment="Right" Margin="0,0,259,1" VerticalAlignment="Bottom" Width="75" Command="{Binding saveCommand, Mode=Default}" Height="22" Content="Speichern" Grid.Row="3"/>
         <Button Content="Speichern und Schließen" HorizontalAlignment="Right" Margin="0,0,115,1" VerticalAlignment="Bottom" Width="139" Command="{Binding saveCommand, Mode=Default}" Height="22" Grid.Row="3"/>

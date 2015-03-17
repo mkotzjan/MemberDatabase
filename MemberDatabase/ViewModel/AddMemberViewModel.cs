@@ -68,43 +68,35 @@ namespace MemberDatabase.ViewModel
             }
         }
 
-        public string birthday
+        public DateTime? birthday
         {
             get
             {
-                if (birthdayP == null)
-                {
-                    return string.Empty;
-                }
-                return Convert.ToDateTime(birthdayP).ToString("dd'.'MM'.'yyyy");
+                return birthdayP;
             }
 
             set
             {
-                if (birthdayP != Convert.ToDateTime(value))
+                if (birthdayP != value)
                 {
-                    birthdayP = Convert.ToDateTime(value);
+                    birthdayP = value;
                     RaisePropertyChanged("birthday");
                 }
             }
         }
 
-        public string accession
+        public DateTime? accession
         {
             get
             {
-                if (accessionP == null)
-                {
-                    return string.Empty;
-                }
-                return Convert.ToDateTime(accessionP).ToString("dd'.'MM'.'yyyy");
+                return accessionP;
             }
 
             set
             {
-                if (accessionP != Convert.ToDateTime(value))
+                if (accessionP != value)
                 {
-                    accessionP = Convert.ToDateTime(value);
+                    accessionP = value;
                     RaisePropertyChanged("accession");
                 }
             }
