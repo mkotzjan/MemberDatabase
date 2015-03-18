@@ -66,6 +66,7 @@
                     <RowDefinition Height="148*"/>
                     <RowDefinition Height="147*"/>
                 </Grid.RowDefinitions>
+                <TextBox VerticalAlignment="Top" Text="{Binding Path=search}" Margin="1"/>
                 <GroupBox Header="Jubiläen" Grid.Row="1" Margin="5">
                     <Grid Margin="5">
                         <Grid.RowDefinitions>
