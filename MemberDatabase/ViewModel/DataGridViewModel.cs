@@ -17,6 +17,7 @@
         private List<string> birthdayP;
         private List<string> anniversaryTooltipP;
         private List<string> birthdayTooltipP;
+        private string searchKey;
         private Database db;
         private Anniversary an;
 
@@ -101,6 +102,23 @@
             }
         }
 
+        public string search
+        {
+            get
+            {
+                return searchKey;
+            }
+
+            set
+            {
+                if (value != searchKey)
+                {
+                    searchKey = value;
+                    RaisePropertyChanged("search");
+                }
+            }
+        }
+
         public DataGridViewModel()
         {
             this.db = new Database();
@@ -111,6 +129,7 @@
 
         public void loadDataBase()
         {
+            search = string.Empty;
             this.members = this.db.content();
             List<Member> memberCopy = new List<Member>();
             foreach (Member member in members)
