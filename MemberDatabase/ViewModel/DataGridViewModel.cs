@@ -9,10 +9,13 @@
     using System.Windows.Controls;
     using System.Windows.Input;
     using MemberDatabase.Model;
+using System.ComponentModel;
+    using System.Windows.Data;
 
     class DataGridViewModel : BaseViewModel
     {
         private MemberList membersP;
+        private ICollectionView memberViewP;
         private List<string> anniversaryP;
         private List<string> birthdayP;
         private List<string> anniversaryTooltipP;
@@ -34,6 +37,7 @@
                 {
                     membersP = value;
                     RaisePropertyChanged("members");
+                    memberView = CollectionViewSource.GetDefaultView(members);
                 }
             }
         }
@@ -119,6 +123,22 @@
             }
         }
 
+        public ICollectionView memberView
+        {
+            get
+            {
+                return memberViewP;
+            }
+            set
+            {
+                if (value != memberViewP)
+                {
+                    memberViewP = value;
+                    RaisePropertyChanged("memberView");
+                }
+            }
+        }
+
         public DataGridViewModel()
         {
             this.db = new Database();
@@ -132,6 +152,8 @@
         {
             search = string.Empty;
             this.members = this.db.content();
+            memberView = CollectionViewSource.GetDefaultView(members);
+            group();
             List<Member> memberCopy = new List<Member>();
             foreach (Member member in members)
 	        {
@@ -178,6 +200,23 @@
         }
 
         bool _editModeChecked;
+
+        private void group()
+        {
+            if (memberView != null)
+            {
+                memberView.GroupDescriptions.Clear();
+            }
+            else
+            {
+                return;
+            }
+
+            if (memberView.CanGroup == true)
+            {
+                memberView.GroupDescriptions.Add(new PropertyGroupDescription("active"));
+            }
+        }
 
         public bool editModeChecked
         {
