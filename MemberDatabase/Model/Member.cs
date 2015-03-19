@@ -123,6 +123,18 @@
             }
         }
 
+        public bool Search(string key)
+        {
+            if (this.firstName.Contains(key))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         void RaisePropertyChanged(string prop)
         {
             if (this.PropertyChanged != null) { this.PropertyChanged(this, new PropertyChangedEventArgs(prop)); }

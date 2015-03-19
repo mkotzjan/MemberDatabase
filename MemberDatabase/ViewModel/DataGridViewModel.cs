@@ -119,6 +119,7 @@ using System.ComponentModel;
                 {
                     searchKey = value;
                     RaisePropertyChanged("search");
+                    searchDataGrid(searchKey);
                 }
             }
         }
@@ -215,6 +216,14 @@ using System.ComponentModel;
             if (memberView.CanGroup == true)
             {
                 memberView.GroupDescriptions.Add(new PropertyGroupDescription("active"));
+            }
+        }
+
+        private void searchDataGrid(string key)
+        {
+            if (memberView != null)
+            {
+                memberView.Filter = new Predicate<object>(x => ((Member)x).Search(key) == true);
             }
         }
 
