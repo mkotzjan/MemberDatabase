@@ -132,7 +132,16 @@
             
             if (key != string.Empty)
             {
-                if (this.firstName.Contains(key) || this.lastName.Contains(key) || Convert.ToDateTime(this.birthday).ToString("dd'.'MM'.'yyyy").Contains(key) || Convert.ToDateTime(this.accession).ToString("dd'.'MM'.'yyyy").Contains(key))
+                key = key.ToLower();
+                if (this.birthday != null && Convert.ToDateTime(this.birthday).ToString("dd'.'MM'.'yyyy").ToLower().Contains(key))
+                {
+                    return true;
+                }
+                else if (this.accession != null && Convert.ToDateTime(this.accession).ToString("dd'.'MM'.'yyyy").ToLower().Contains(key))
+                {
+                    return true;
+                }
+                else if (this.firstName.ToLower().Contains(key) || this.lastName.ToLower().Contains(key))
                 {
                     return true;
                 }
