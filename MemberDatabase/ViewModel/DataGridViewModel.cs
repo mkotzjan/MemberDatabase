@@ -12,8 +12,7 @@
 
     class DataGridViewModel : BaseViewModel
     {
-        private List<Member> membersP;
-        private List<Member> searchMember;
+        private MemberList membersP;
         private List<string> anniversaryP;
         private List<string> birthdayP;
         private List<string> anniversaryTooltipP;
@@ -22,18 +21,18 @@
         private Database db;
         private Anniversary an;
 
-        public List<Member> members
+        public MemberList members
         { 
             get
             {
-                return searchMember;
+                return membersP;
             }
             
             set
             {
-                if (value != searchMember)
+                if (value != membersP)
                 {
-                    searchMember = value;
+                    membersP = value;
                     RaisePropertyChanged("members");
                 }
             }
@@ -116,7 +115,6 @@
                 {
                     searchKey = value;
                     RaisePropertyChanged("search");
-                    this.members = Search.byString(membersP, search);
                 }
             }
         }
@@ -124,8 +122,7 @@
         public DataGridViewModel()
         {
             this.db = new Database();
-            this.searchMember = new List<Member>();
-            this.membersP = new List<Member>();
+            this.membersP = new MemberList();
             this.loadDataBase();
             this.editModeChecked = false;
             this.readOnly = true;
@@ -134,8 +131,7 @@
         public void loadDataBase()
         {
             search = string.Empty;
-            this.membersP = this.db.content();
-            this.members = Search.byString(membersP, search);
+            this.members = this.db.content();
             List<Member> memberCopy = new List<Member>();
             foreach (Member member in members)
 	        {

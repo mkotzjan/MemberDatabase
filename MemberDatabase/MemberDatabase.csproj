@@ -78,8 +78,8 @@
     <Compile Include="Model\DatabaseConnection.cs" />
     <Compile Include="Model\DateItem.cs" />
     <Compile Include="Model\Member.cs" />
+    <Compile Include="Model\MemberList.cs" />
     <Compile Include="Model\RelayCommand.cs" />
-    <Compile Include="Model\Search.cs" />
     <Compile Include="ViewModel\AddMemberViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\DataGridViewModel.cs" />

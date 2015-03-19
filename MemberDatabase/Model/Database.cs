@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Data.SQLite;
     using System.IO;
     using System.Linq;
@@ -27,9 +28,9 @@
             }
         }
 
-        public List<Member> content()
+        public MemberList content()
         {
-            List<Member> importedContend = new List<Member>();
+            MemberList importedContend = new MemberList();
             string sql = "select rowid, firstname, lastname, strftime('%d.%m.%Y ', datetime(birthday, 'unixepoch')) as birthday,  strftime('%d.%m.%Y ', datetime(accession, 'unixepoch')) as accession, active from members order by lastname, firstname asc;";
             SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
             SQLiteDataReader reader = command.ExecuteReader();
