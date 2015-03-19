@@ -125,14 +125,19 @@
 
         public bool Search(string key)
         {
-            if (this.firstName.Contains(key))
+            if (key == string.Empty)
             {
                 return true;
             }
-            else
+            
+            if (key != string.Empty)
             {
-                return false;
+                if (this.firstName.Contains(key) || this.lastName.Contains(key) || Convert.ToDateTime(this.birthday).ToString("dd'.'MM'.'yyyy").Contains(key) || Convert.ToDateTime(this.accession).ToString("dd'.'MM'.'yyyy").Contains(key))
+                {
+                    return true;
+                }
             }
+            return false;
         }
 
         void RaisePropertyChanged(string prop)
