@@ -120,7 +120,7 @@ using System.ComponentModel;
                     searchKey = value;
                     RaisePropertyChanged("search");
                     searchDataGrid(searchKey);
-                    //group();
+                    group();
                 }
             }
         }
@@ -155,7 +155,7 @@ using System.ComponentModel;
             search = string.Empty;
             this.members = this.db.content();
             memberView = CollectionViewSource.GetDefaultView(members);
-            //group();
+            group();
             List<Member> memberCopy = new List<Member>();
             foreach (Member member in members)
 	        {

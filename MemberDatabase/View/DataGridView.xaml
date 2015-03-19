@@ -50,7 +50,33 @@
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <DataGrid Grid.Column="1" RenderTransformOrigin="-3.583,-3.154" ItemsSource="{Binding Path=memberView}" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" CanUserAddRows="false" IsReadOnly="{Binding readOnly}">
+            <DataGrid Grid.Column="1" Margin="1" ItemsSource="{Binding Path=memberView}" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" CanUserAddRows="false" IsReadOnly="{Binding readOnly}" HeadersVisibility="Column" RowHeaderWidth="0" Background="White">
+                <DataGrid.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.ContainerStyle>
+                            <Style TargetType="{x:Type GroupItem}">
+                                <Setter Property="Margin" Value="0,0,0,5"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type GroupItem}">
+                                            <Expander IsExpanded="True" Background="WhiteSmoke" BorderThickness="1" BorderBrush="Gray">
+                                                <Expander.Header>
+                                                    <DockPanel>
+                                                        <TextBlock FontWeight="Bold" Text="{Binding Path=Name}" Margin="5,0,0,0" Width="100"/>
+                                                        <TextBlock FontWeight="Bold" Text="{Binding Path=ItemCount}"/>
+                                                    </DockPanel>
+                                                </Expander.Header>
+                                                <Expander.Content>
+                                                    <ItemsPresenter />
+                                                </Expander.Content>
+                                            </Expander>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </GroupStyle.ContainerStyle>
+                    </GroupStyle>
+                </DataGrid.GroupStyle>
                 <DataGrid.RowStyle>
                     <Style TargetType="DataGridRow">
                         <Style.Triggers>
