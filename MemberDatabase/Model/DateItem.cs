@@ -9,6 +9,8 @@ namespace MemberDatabase.Model
 {
     public class DateItem : INotifyPropertyChanged
     {
+        private int ident;
+        private int memberIdent;
         private DateTime? dateTime;
         private string dateInfo;
 
