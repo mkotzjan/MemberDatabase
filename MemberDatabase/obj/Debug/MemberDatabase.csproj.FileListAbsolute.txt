@@ -18,3 +18,5 @@ C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Memb
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase.Properties.Resources.resources
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase.csproj.GenerateResource.Cache
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase.csprojResolveAssemblyReference.cache
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\Debug\nunit.framework.dll
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\Debug\nunit.framework.xml
