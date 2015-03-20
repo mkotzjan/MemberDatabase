@@ -20,3 +20,5 @@ C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\Memb
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\MemberDatabase.csprojResolveAssemblyReference.cache
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\Debug\nunit.framework.dll
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\Debug\nunit.framework.xml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\View\Window1.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\Debug\View\Window1.g.cs

@@ -69,6 +69,7 @@
                                     </Grid.ColumnDefinitions>
                                     <DatePicker Grid.Column="0" SelectedDate="{Binding date}" Margin="1"/>
                                     <TextBox Text="{Binding information}" Grid.Column="1" Margin="1" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+                                    <Button Content="X" Grid.Column="2" Margin="40,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                                 </Grid>
                             </DataTemplate>
                         </ItemsControl.ItemTemplate>
