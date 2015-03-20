@@ -21,6 +21,39 @@ namespace MemberDatabase.Model
             if (this.PropertyChanged != null) { this.PropertyChanged(this, new PropertyChangedEventArgs(prop)); }
         }
 
+        public int id
+        {
+            get
+            {
+                return ident;
+            }
+
+            set
+            {
+                if (value != ident;
+                {
+                    ident = value;
+                    RaisePropertyChanged("id");
+                }
+            }
+        }
+
+        public int memberID
+        {
+            get
+            {
+                return memberIdent;
+            }
+
+            set
+            {
+                if (value != memberIdent)
+                {
+                    memberIdent = value;
+                    RaisePropertyChanged("memberID");
+                }
+            }
+        }
         public DateTime? date
         {
             get
