@@ -30,7 +30,7 @@ namespace MemberDatabase.Model
 
             set
             {
-                if (value != ident;
+                if (value != ident);
                 {
                     ident = value;
                     RaisePropertyChanged("id");
