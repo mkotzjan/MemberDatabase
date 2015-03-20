@@ -1,4 +1,0 @@
-C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabaseTest\bin\Debug\MemberDatabaseTest.dll
-C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabaseTest\bin\Debug\MemberDatabaseTest.pdb
-C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabaseTest\obj\Debug\MemberDatabaseTest.dll
-C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabaseTest\obj\Debug\MemberDatabaseTest.pdb
