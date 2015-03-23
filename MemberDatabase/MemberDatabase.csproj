@@ -80,9 +80,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="View\Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
-    </Compile>
     <Page Include="View\AddMemberView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -102,6 +99,7 @@
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\MemberList.cs" />
     <Compile Include="Model\RelayCommand.cs" />
+    <Compile Include="UnitTests\TestAnniversary.cs" />
     <Compile Include="UnitTests\TestMember.cs" />
     <Compile Include="ViewModel\AddMemberViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
@@ -113,10 +111,6 @@
       <DependentUpon>DataGridView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\Window1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

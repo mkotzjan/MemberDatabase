@@ -12,8 +12,16 @@
         private DateTime today;
         public Anniversary(List<Member> member)
         {
-            this.sortedList = member.OrderBy(d => d.accession).ToList<Member>();
             this.today = DateTime.Today;
+
+            if (member != null)
+            {
+                this.sortedList = member.OrderBy(d => d.accession).ToList<Member>();
+            }
+            else
+            {
+                this.sortedList = new List<Member>();
+            }
         }
         public Tuple<List<string>, List<string>> nextAnniversary()
         {
