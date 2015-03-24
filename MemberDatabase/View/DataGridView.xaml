@@ -52,7 +52,7 @@
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <DataGrid Grid.Column="1" Margin="1" ItemsSource="{Binding Path=memberView}" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" CanUserAddRows="false" IsReadOnly="{Binding readOnly}" HeadersVisibility="Column" RowHeaderWidth="0" Background="White">
+            <DataGrid Grid.Column="1" Margin="1" ItemsSource="{Binding Path=memberView}" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" CanUserAddRows="false" IsReadOnly="{Binding readOnly}" HeadersVisibility="Column" RowHeaderWidth="0" Background="White" BorderBrush="{x:Null}">
                 <DataGrid.GroupStyle>
                     <GroupStyle>
                         <GroupStyle.ContainerStyle>
@@ -61,10 +61,11 @@
                                 <Setter Property="Template">
                                     <Setter.Value>
                                         <ControlTemplate TargetType="{x:Type GroupItem}">
-                                            <Expander IsExpanded="True" Background="WhiteSmoke" BorderThickness="1" BorderBrush="Gray">
+                                            <Expander IsExpanded="True" Background="Gray" BorderThickness="1" BorderBrush="Gray">
                                                 <Expander.Header>
                                                     <DockPanel>
-                                                        <TextBlock FontWeight="Bold" Text="{Binding Path=Name}" Margin="5,0,0,0" Width="100"/>
+                                                        <TextBlock FontWeight="Bold" Text="{Binding Path=Name, Converter={StaticResource converter}, ConverterParameter=active}" />
+                                                        <TextBlock Text=": "/>
                                                         <TextBlock FontWeight="Bold" Text="{Binding Path=ItemCount}"/>
                                                     </DockPanel>
                                                 </Expander.Header>
@@ -81,7 +82,9 @@
                     <GroupStyle>
                         <GroupStyle.HeaderTemplate>
                             <DataTemplate>
-                                <DockPanel>
+                                <DockPanel Background="LightGray">
+                                    <TextBlock Text="{Binding Path=Name, Converter={StaticResource converter}, ConverterParameter=group}"/>
+                                    <TextBlock Text=": "/>
                                     <TextBlock Text="{Binding Path=ItemCount}"/>
                                 </DockPanel>
                             </DataTemplate>

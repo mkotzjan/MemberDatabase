@@ -10,30 +10,38 @@ namespace MemberDatabase.Model
     [ValueConversion(typeof(Boolean), typeof(Int32))]
     class GroupingConverter : IValueConverter
     {
-        public object ConvertBool(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            bool active = (bool)value;
-            if (active)
+            string para = (string)parameter;
+            if (para == "active")
             {
-                return "Aktiv";
+                bool active = (bool)value;
+                if (active)
+                {
+                    return "Aktiv";
+                }
+                else
+                {
+                    return "Inaktiv";
+                }
             }
             else
             {
-                return "Inaktiv";
+                int group = (int)value;
+                if (group == 0)
+                {
+                    return "Erwachsene";
+                }
+                else
+                {
+                    return "Kinder";
+                }
             }
         }
 
-        public object ConvertÍnt(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
         {
-            int group = (int)value;
-            if (group == 0)
-            {
-                return "Erwachsene";
-            }
-            else
-            {
-                return "Kinder";
-            }
+            return "test";
         }
     }
 }
