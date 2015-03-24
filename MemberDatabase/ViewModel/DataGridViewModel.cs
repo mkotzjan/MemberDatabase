@@ -21,6 +21,7 @@ using System.ComponentModel;
         private List<string> anniversaryTooltipP;
         private List<string> birthdayTooltipP;
         private string searchKey;
+        private int selectedIndex;
         private Database db;
         private Anniversary an;
 
@@ -121,6 +122,44 @@ using System.ComponentModel;
                     RaisePropertyChanged("search");
                     searchDataGrid(searchKey);
                     group();
+                }
+            }
+        }
+
+        public int selected
+        {
+            get
+            {
+                return selectedIndex;
+            }
+
+            set
+            {
+                if (value != selectedIndex)
+                {
+                    selectedIndex = value;
+                    RaisePropertyChanged("selected");
+                    filterDataGrid(selectedIndex);
+                    group();
+                }
+            }
+        }
+
+        private void filterDataGrid(int selectedIndex)
+        {
+            if (memberView != null)
+            {
+                if (selectedIndex == 0)
+	            {
+		            memberView.Filter = null;
+	            }
+                else if (selectedIndex == 1)
+	            {
+                    memberView.Filter = new Predicate<object>(x => ((Member)x).group == 0);
+	            }
+                else
+                {
+                    memberView.Filter = new Predicate<object>(x => ((Member)x).group == 1);
                 }
             }
         }
