@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.ComponentModel;
     using System.Linq;
     using System.Text;
@@ -103,6 +104,28 @@
             }
         }
 
+        int _group;
+
+        /// <summary>
+        /// Gets or sets the integer value of the group.
+        /// </summary>
+        public int group
+        {
+            get
+            {
+                return this._group;
+            }
+
+            set
+            {
+                if (value != this._group)
+                {
+                    this._group = value;
+                    this.RaisePropertyChanged("group");
+                }
+            }
+        }
+
         bool _active;
         /// <summary>
         /// Gets or sets the active state.
@@ -119,6 +142,91 @@
                 {
                     this._active = value;
                     this.RaisePropertyChanged("Active");
+                }
+            }
+        }
+
+        string _email;
+
+        /// <summary>
+        /// Gets or sets the email.
+        /// </summary>
+        public string email
+        {
+            get
+            {
+                return this._email;
+            }
+
+            set
+            {
+                if (value != this._email)
+                {
+                    this._email = value;
+                    this.RaisePropertyChanged("email");
+                }
+            }
+        }
+
+        string _adress;
+
+        public string adress
+        {
+            get
+            {
+                return this._adress;
+            }
+
+            set
+            {
+                if (value != this._adress)
+                {
+                    this._adress = value;
+                    this.RaisePropertyChanged("adress");
+                }
+            }
+        }
+
+        ObservableCollection<DateItem> _exam;
+
+        /// <summary>
+        /// Gets or sets the exam list.
+        /// </summary>
+        public ObservableCollection<DateItem> exam
+        {
+            get
+            {
+                return this._exam;
+            }
+
+            set
+            {
+                if (value != this._exam)
+                {
+                    this._exam = value;
+                    this.RaisePropertyChanged("exam");
+                }
+            }
+        }
+
+        ObservableCollection<DateItem> _seminar;
+
+        /// <summary>
+        /// Gets or sets the seminar list.
+        /// </summary>
+        public ObservableCollection<DateItem> seminar
+        {
+            get
+            {
+                return this._seminar;
+            }
+
+            set
+            {
+                if (value != this._seminar)
+                {
+                    this._seminar = value;
+                    RaisePropertyChanged("seminar");
                 }
             }
         }
