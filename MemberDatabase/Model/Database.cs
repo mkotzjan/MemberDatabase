@@ -21,7 +21,7 @@
             if (!File.Exists("Member.db"))
             {
                 SQLiteConnection.CreateFile("Member.db");
-                string sql = "create table members (firstname varchar(40) not null, lastname varchar(40) not null, birthday integer, accession integer, active integer)";
+                string sql = "create table members (firstname varchar(40) not null, lastname varchar(40) not null, birthday integer, accession integer, active integer, groupid integer, email text, adress text);";
                 SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
 
                 command.ExecuteNonQuery();
@@ -31,7 +31,7 @@
         public MemberList content()
         {
             MemberList importedContend = new MemberList();
-            string sql = "select rowid, firstname, lastname, strftime('%d.%m.%Y ', datetime(birthday, 'unixepoch')) as birthday,  strftime('%d.%m.%Y ', datetime(accession, 'unixepoch')) as accession, active from members order by active desc, lastname asc, firstname asc;";
+            string sql = "select rowid, firstname, lastname, strftime('%d.%m.%Y ', datetime(birthday, 'unixepoch')) as birthday,  strftime('%d.%m.%Y ', datetime(accession, 'unixepoch')) as accession, active, groupid, email, adress from members order by active desc, groupid asc, lastname asc, firstname asc;";
             SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
             SQLiteDataReader reader = command.ExecuteReader();
             Member member;
@@ -55,7 +55,10 @@
                 {
                     active = Convert.ToBoolean(reader["active"]);
                 }
-                member = new Member { firstName = firstName, lastName = lastName, birthday = birthday, accession = accession, active = active };
+                int group = Convert.ToInt32(reader["groupid"]);
+                string email = Convert.ToString(reader["email"]);
+                string adress = Convert.ToString(reader["adress"]);
+                member = new Member { firstName = firstName, lastName = lastName, birthday = birthday, accession = accession, active = active, group = group, email = email, adress = adress };
                 member.setID(id);
                 importedContend.Add(member);
             }
@@ -64,7 +67,7 @@
 
         public void add(Member member)
         {
-            string sql = "insert into members values ('" + member.firstName + "', '" + member.lastName + "', " + convertDate(member.birthday) + ", " + convertDate(member.accession) + ", '" + Convert.ToInt32(member.active) + "');";
+            string sql = "insert into members values ('" + member.firstName + "', '" + member.lastName + "', " + convertDate(member.birthday) + ", " + convertDate(member.accession) + ", '" + Convert.ToInt32(member.active) + "', '" + member.group + "', '" + member.email + "', '" + member.adress + "');";
             SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
             command.ExecuteNonQuery();
         }
