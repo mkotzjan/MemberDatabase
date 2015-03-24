@@ -77,15 +77,6 @@
                         </GroupStyle.ContainerStyle>
                     </GroupStyle>
                 </DataGrid.GroupStyle>
-                <DataGrid.RowStyle>
-                    <Style TargetType="DataGridRow">
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding active}" Value="false">
-                                <Setter Property="Background" Value="LightGray"></Setter>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </DataGrid.RowStyle>
             </DataGrid>
             <Grid>
                 <Grid.RowDefinitions>
@@ -93,12 +84,22 @@
                     <RowDefinition Height="147*"/>
                 </Grid.RowDefinitions>
                 <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="26"/>
                         <RowDefinition Height="26"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
-                    <TextBox VerticalAlignment="Top" Text="{Binding Path=search, UpdateSourceTrigger=PropertyChanged}" Margin="1"/>
+                    <TextBox VerticalAlignment="Top" Text="{Binding Path=search, UpdateSourceTrigger=PropertyChanged}" Margin="1,1,1,0" Grid.ColumnSpan="2"/>
+                    <Label Content="Zeige:" Grid.Row="1" Grid.Column="0"/>
+                    <ComboBox Grid.Row="1" Grid.Column="1" SelectedIndex="{Binding Path=selected}">
+                        <ComboBoxItem Content="Alle"/>
+                        <ComboBoxItem Content="Erwachsene"/>
+                        <ComboBoxItem Content="Kinder"/>
+                    </ComboBox>
                 </Grid>
                 <GroupBox Header="Jubiläen" Grid.Row="1" Margin="5">
                     <Grid Margin="5">
