@@ -39,6 +39,14 @@
             {
                 e.Column.Header = "Aktiv";
             }
+            else if (e.Column.Header.ToString() == "email")
+            {
+                e.Column.Header = "E-Mail";
+            }
+            else
+            {
+                e.Cancel = true;
+            }
         }
 
         private void MenuItemClose_Click(object sender, RoutedEventArgs e)
