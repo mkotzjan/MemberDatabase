@@ -302,7 +302,7 @@ namespace MemberDatabase.ViewModel
 
         private void saveMember()
         {
-            Member member = new Member { firstName = firstNameP, lastName = lastNameP, birthday = birthdayP, accession = accessionP, active = activeP };
+            Member member = new Member { firstName = firstNameP, lastName = lastNameP, birthday = birthdayP, accession = accessionP, active = activeP, group = selectedGroupP, email = emailP, adress = addressP, exam = examListP, seminar = seminarListP };
             db.add(member);
         }
 

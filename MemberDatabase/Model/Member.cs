@@ -265,7 +265,7 @@
 
         public Member Clone()
         {
-            Member member = new Member { firstName = _firstName, lastName = _lastName, birthday = _birthday, accession = _accession, active = _active };
+            Member member = new Member { firstName = this._firstName, lastName = this._lastName, birthday = this._birthday, accession = this._accession, active = this._active, group = this._group, email = this._email, adress = this._adress, exam = this._exam, seminar = this._seminar };
             member.setID(_id);
             return member;
         }
