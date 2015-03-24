@@ -34,6 +34,8 @@ namespace MemberDatabase.ViewModel
         private ICommand saveCommandP;
         private ICommand addExamDateP;
         private ICommand addSeminarDateP;
+        private ICommand deleteExamCommandP;
+        private ICommand deleteSeminarCommandP;
         private Database db;
 
         /// <summary>
@@ -177,6 +179,56 @@ namespace MemberDatabase.ViewModel
                     this.addSeminarDateP = new RelayCommand(param => this.addSeminar());
                 }
                 return this.addSeminarDateP;
+            }
+        }
+
+        public ICommand deleteExamCommand
+        {
+            get
+            {
+                if (this.deleteExamCommandP == null)
+	            {
+		            this.deleteExamCommandP = new RelayCommand(deleteExam);
+	            }
+                return deleteExamCommandP;
+            }
+        }
+
+        public ICommand deleteSeminarCommand
+        {
+            get
+            {
+                if (this.deleteSeminarCommandP == null)
+                {
+                    this.deleteSeminarCommandP = new RelayCommand(deleteSeminar);
+                }
+                return deleteSeminarCommandP;
+            }
+        }
+
+        private void deleteExam(object dateItem)
+        {
+            DateItem dateItemClicked = dateItem as DateItem;
+            if (this.examListP.Count > 1)
+            {
+                this.examListP.Remove(dateItemClicked);
+            }
+            else
+            {
+                this.examListP[0] = new DateItem();
+            }
+        }
+
+        public void deleteSeminar(object dateItem)
+        {
+            DateItem dateItemClicked = dateItem as DateItem;
+            if (this.seminarListP.Count > 1)
+            {
+                this.seminarListP.Remove(dateItemClicked);
+            }
+            else
+            {
+                this.seminarListP[0] = new DateItem();
             }
         }
 
