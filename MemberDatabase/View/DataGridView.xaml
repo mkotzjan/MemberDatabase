@@ -34,7 +34,7 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="?">
-                <MenuItem Header="Hilfe" HorizontalAlignment="Left" Width="145" Command="{Binding Path=notImplementedError}">s
+                <MenuItem Header="Hilfe" HorizontalAlignment="Left" Width="145" Command="{Binding Path=notImplementedError}">
                     <MenuItem.Icon>
                         <Image Source="pack://application:,,,/Resources/help.png" Height="20" Width="20" />
                     </MenuItem.Icon>
@@ -94,11 +94,19 @@
                 <DataGrid.RowDetailsTemplate>
                     <DataTemplate>
                         <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
+                            <Label Content="Adresse:" Grid.Column="0" Grid.Row="0"/>
+                            <Label Content="Prüfungen:" Grid.Column="1" Grid.Row="0"/>
+                            <Label Content="Lehrgänge:" Grid.Column="2" Grid.Row="0"/>
+                            <TextBox Text="{Binding Path=adress}" IsEnabled="{Binding DataContext.editModeChecked, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}}" Grid.Row="1" Grid.Column="0"/>
                         </Grid>
                     </DataTemplate>
                 </DataGrid.RowDetailsTemplate>
