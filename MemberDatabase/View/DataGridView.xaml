@@ -76,6 +76,15 @@
                             </Style>
                         </GroupStyle.ContainerStyle>
                     </GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <DockPanel>
+                                    <TextBlock Text="{Binding Path=ItemCount}"/>
+                                </DockPanel>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                    </GroupStyle>
                 </DataGrid.GroupStyle>
             </DataGrid>
             <Grid>

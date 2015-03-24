@@ -22,6 +22,7 @@ using System.ComponentModel;
         private List<string> birthdayTooltipP;
         private string searchKey;
         private int selectedIndex;
+        private bool groupByGroups;
         private Database db;
         private Anniversary an;
 
@@ -152,14 +153,17 @@ using System.ComponentModel;
                 if (selectedIndex == 0)
 	            {
 		            memberView.Filter = null;
+                    this.groupByGroups = true;
 	            }
                 else if (selectedIndex == 1)
 	            {
                     memberView.Filter = new Predicate<object>(x => ((Member)x).group == 0);
+                    this.groupByGroups = false;
 	            }
                 else
                 {
                     memberView.Filter = new Predicate<object>(x => ((Member)x).group == 1);
+                    this.groupByGroups = false;
                 }
             }
         }
@@ -184,6 +188,7 @@ using System.ComponentModel;
         {
             this.db = new Database();
             this.membersP = new MemberList();
+            this.groupByGroups = true;
             this.loadDataBase();
             this.editModeChecked = false;
             this.readOnly = true;
@@ -256,6 +261,10 @@ using System.ComponentModel;
             if (memberView.CanGroup == true)
             {
                 memberView.GroupDescriptions.Add(new PropertyGroupDescription("active"));
+                if (this.groupByGroups == true)
+                {
+                    memberView.GroupDescriptions.Add(new PropertyGroupDescription("group"));
+                }
             }
         }
 
