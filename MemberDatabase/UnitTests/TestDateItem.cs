@@ -17,8 +17,8 @@ namespace MemberDatabase.UnitTests
             DateItem dateItem = new DateItem();
             Assert.IsNull(dateItem.date);
             Assert.AreEqual(string.Empty, dateItem.information);
-            Assert.IsNull(dateItem.id);
-            Assert.IsNull(dateItem.memberID);
+            Assert.AreEqual(0, dateItem.id);
+            Assert.AreEqual(0, dateItem.memberID);
         }
     }
 }
