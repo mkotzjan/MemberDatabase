@@ -10,5 +10,10 @@ namespace MemberDatabase.UnitTests
     [TestFixture]
     class TestDateItem
     {
+        [Test]
+        public void TestInitialize()
+        {
+
+        }
     }
 }
