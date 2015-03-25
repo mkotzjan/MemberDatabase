@@ -101,6 +101,7 @@
     <Compile Include="Model\MemberList.cs" />
     <Compile Include="Model\RelayCommand.cs" />
     <Compile Include="UnitTests\TestAnniversary.cs" />
+    <Compile Include="UnitTests\TestDateItem.cs" />
     <Compile Include="UnitTests\TestMember.cs" />
     <Compile Include="ViewModel\AddMemberViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
