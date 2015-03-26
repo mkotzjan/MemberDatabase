@@ -176,10 +176,26 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Prüfungen">
-                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Column="1">
+                        
+                    </DataGrid>
+                </Grid>
             </TabItem>
             <TabItem Header="Lehrgänge">
-                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid Grid.Column="1">
+
+                    </DataGrid>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>
