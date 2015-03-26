@@ -114,6 +114,12 @@
                         </DataGrid.RowDetailsTemplate>
                     </DataGrid>
                 </TabItem>
+                <TabItem Header="Prüfungen">
+                    
+                </TabItem>
+                <TabItem Header="Lehrgänge">
+                    
+                </TabItem>
             </TabControl>
             <Grid>
                 <Grid.RowDefinitions>
