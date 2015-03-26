@@ -23,7 +23,22 @@
                 SQLiteConnection.CreateFile("Member.db");
                 string sql = "create table members (firstname varchar(40) not null, lastname varchar(40) not null, birthday integer, accession integer, active integer, groupid integer, email text, adress text);";
                 SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
+                command.ExecuteNonQuery();
 
+                sql = "create table exams (date integer, description text);";
+                command = new SQLiteCommand(sql, DatabaseConnection.instance);
+                command.ExecuteNonQuery();
+
+                sql = "create table seminars (date integer, description text);";
+                command = new SQLiteCommand(sql, DatabaseConnection.instance);
+                command.ExecuteNonQuery();
+
+                sql = "create table examconnection (examid integer, memberid integer);";
+                command = new SQLiteCommand(sql, DatabaseConnection.instance);
+                command.ExecuteNonQuery();
+
+                sql = "create table seminarconnection (seminarid integer, memberid integer);";
+                command = new SQLiteCommand(sql, DatabaseConnection.instance);
                 command.ExecuteNonQuery();
             }
         }
