@@ -5,7 +5,6 @@ C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\x86\Debug\
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\x86\Debug\System.Data.SQLite.dll
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\x86\Debug\nunit.framework.xml
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\bin\x86\Debug\System.Data.SQLite.xml
-C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\MemberDatabase.csprojResolveAssemblyReference.cache
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\App.baml
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\View\AddMemberView.g.cs
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\View\DataGridView.g.cs
