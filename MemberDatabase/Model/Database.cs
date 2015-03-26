@@ -85,6 +85,13 @@
             string sql = "insert into members values ('" + member.firstName + "', '" + member.lastName + "', " + convertDate(member.birthday) + ", " + convertDate(member.accession) + ", '" + Convert.ToInt32(member.active) + "', '" + member.group + "', '" + member.email + "', '" + member.adress + "');";
             SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
             command.ExecuteNonQuery();
+
+            foreach (DateItem exam in member.exam)
+            {
+                sql = "";
+                command = new SQLiteCommand(sql, DatabaseConnection.instance);
+                command.ExecuteNonQuery();
+            }
         }
 
         private static string convertDate(DateTime? date)
