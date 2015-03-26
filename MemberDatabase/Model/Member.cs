@@ -241,18 +241,38 @@
             if (key != string.Empty)
             {
                 key = key.ToLower();
-                if (this.birthday != null && Convert.ToDateTime(this.birthday).ToString("dd'.'MM'.'yyyy").ToLower().Contains(key))
+                int count = 0;
+                string[] keyPart = key.Split(' ');
+
+                foreach (string k in keyPart)
+                {
+                    if (k == string.Empty)
+                    {
+                        ++count;
+                        continue;
+                    }
+                    if (this.birthday != null && Convert.ToDateTime(this.birthday).ToString("dd'.'MM'.'yyyy").ToLower().Contains(k))
+                    {
+                        ++count;
+                        continue;
+                    }
+                    else if (this.accession != null && Convert.ToDateTime(this.accession).ToString("dd'.'MM'.'yyyy").ToLower().Contains(k))
+                    {
+                        ++count;
+                        continue;
+                    }
+                    else if (this.firstName.ToLower().Contains(key) || this.lastName.ToLower().Contains(k))
+                    {
+                        ++count;
+                        continue;
+                    }
+                }
+
+                if (count >= keyPart.Count<string>())
                 {
                     return true;
                 }
-                else if (this.accession != null && Convert.ToDateTime(this.accession).ToString("dd'.'MM'.'yyyy").ToLower().Contains(key))
-                {
-                    return true;
-                }
-                else if (this.firstName.ToLower().Contains(key) || this.lastName.ToLower().Contains(key))
-                {
-                    return true;
-                }
+                
             }
             return false;
         }
