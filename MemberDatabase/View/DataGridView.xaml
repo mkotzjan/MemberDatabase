@@ -52,65 +52,69 @@
                 <ColumnDefinition Width="250"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <DataGrid Grid.Column="1" Margin="1" ItemsSource="{Binding Path=memberView}" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" CanUserAddRows="false" IsReadOnly="{Binding readOnly}" HeadersVisibility="Column" RowHeaderWidth="0" Background="White" BorderBrush="{x:Null}">
-                <DataGrid.GroupStyle>
-                    <GroupStyle>
-                        <GroupStyle.ContainerStyle>
-                            <Style TargetType="{x:Type GroupItem}">
-                                <Setter Property="Margin" Value="0,0,0,5"/>
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="{x:Type GroupItem}">
-                                            <Expander IsExpanded="True" Background="Gray" BorderThickness="1" BorderBrush="Gray">
-                                                <Expander.Header>
-                                                    <DockPanel>
-                                                        <TextBlock FontWeight="Bold" Text="{Binding Path=Name, Converter={StaticResource converter}, ConverterParameter=active}" />
-                                                        <TextBlock Text=": "/>
-                                                        <TextBlock FontWeight="Bold" Text="{Binding Path=ItemCount}"/>
-                                                    </DockPanel>
-                                                </Expander.Header>
-                                                <Expander.Content>
-                                                    <ItemsPresenter />
-                                                </Expander.Content>
-                                            </Expander>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-                            </Style>
-                        </GroupStyle.ContainerStyle>
-                    </GroupStyle>
-                    <GroupStyle>
-                        <GroupStyle.HeaderTemplate>
+            <TabControl Grid.Column="1" BorderBrush="{x:Null}" Background="{x:Null}">
+                <TabItem Header="Mitglieder">
+                    <DataGrid Margin="1" ItemsSource="{Binding Path=memberView}" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" CanUserAddRows="false" IsReadOnly="{Binding readOnly}" HeadersVisibility="Column" RowHeaderWidth="0" Background="White" BorderBrush="{x:Null}">
+                        <DataGrid.GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.ContainerStyle>
+                                    <Style TargetType="{x:Type GroupItem}">
+                                        <Setter Property="Margin" Value="0,0,0,5"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="{x:Type GroupItem}">
+                                                    <Expander IsExpanded="True" Background="Gray" BorderThickness="1" BorderBrush="Gray">
+                                                        <Expander.Header>
+                                                            <DockPanel>
+                                                                <TextBlock FontWeight="Bold" Text="{Binding Path=Name, Converter={StaticResource converter}, ConverterParameter=active}" />
+                                                                <TextBlock Text=": "/>
+                                                                <TextBlock FontWeight="Bold" Text="{Binding Path=ItemCount}"/>
+                                                            </DockPanel>
+                                                        </Expander.Header>
+                                                        <Expander.Content>
+                                                            <ItemsPresenter />
+                                                        </Expander.Content>
+                                                    </Expander>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </GroupStyle.ContainerStyle>
+                            </GroupStyle>
+                            <GroupStyle>
+                                <GroupStyle.HeaderTemplate>
+                                    <DataTemplate>
+                                        <DockPanel Background="LightGray">
+                                            <TextBlock Text="{Binding Path=Name, Converter={StaticResource converter}, ConverterParameter=group}"/>
+                                            <TextBlock Text=": "/>
+                                            <TextBlock Text="{Binding Path=ItemCount}"/>
+                                        </DockPanel>
+                                    </DataTemplate>
+                                </GroupStyle.HeaderTemplate>
+                            </GroupStyle>
+                        </DataGrid.GroupStyle>
+                        <DataGrid.RowDetailsTemplate>
                             <DataTemplate>
-                                <DockPanel Background="LightGray">
-                                    <TextBlock Text="{Binding Path=Name, Converter={StaticResource converter}, ConverterParameter=group}"/>
-                                    <TextBlock Text=": "/>
-                                    <TextBlock Text="{Binding Path=ItemCount}"/>
-                                </DockPanel>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Content="Adresse:" Grid.Column="0" Grid.Row="0"/>
+                                    <Label Content="Prüfungen:" Grid.Column="1" Grid.Row="0"/>
+                                    <Label Content="Lehrgänge:" Grid.Column="2" Grid.Row="0"/>
+                                    <TextBox Text="{Binding Path=adress}" IsEnabled="{Binding DataContext.editModeChecked, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}}" Grid.Row="1" Grid.Column="0"/>
+                                </Grid>
                             </DataTemplate>
-                        </GroupStyle.HeaderTemplate>
-                    </GroupStyle>
-                </DataGrid.GroupStyle>
-                <DataGrid.RowDetailsTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <Label Content="Adresse:" Grid.Column="0" Grid.Row="0"/>
-                            <Label Content="Prüfungen:" Grid.Column="1" Grid.Row="0"/>
-                            <Label Content="Lehrgänge:" Grid.Column="2" Grid.Row="0"/>
-                            <TextBox Text="{Binding Path=adress}" IsEnabled="{Binding DataContext.editModeChecked, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}}" Grid.Row="1" Grid.Column="0"/>
-                        </Grid>
-                    </DataTemplate>
-                </DataGrid.RowDetailsTemplate>
-            </DataGrid>
+                        </DataGrid.RowDetailsTemplate>
+                    </DataGrid>
+                </TabItem>
+            </TabControl>
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="148*"/>
