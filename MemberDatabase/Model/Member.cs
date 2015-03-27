@@ -237,8 +237,7 @@
             {
                 return true;
             }
-            
-            if (key != string.Empty)
+            else
             {
                 key = key.ToLower();
                 int count = 0;
@@ -251,7 +250,7 @@
                         ++count;
                         continue;
                     }
-                    if (this.birthday != null && Convert.ToDateTime(this.birthday).ToString("dd'.'MM'.'yyyy").ToLower().Contains(k))
+                    else if (this.birthday != null && Convert.ToDateTime(this.birthday).ToString("dd'.'MM'.'yyyy").ToLower().Contains(k))
                     {
                         ++count;
                         continue;
@@ -261,7 +260,7 @@
                         ++count;
                         continue;
                     }
-                    else if (this.firstName.ToLower().Contains(key) || this.lastName.ToLower().Contains(k))
+                    else if (this.firstName.ToLower().Contains(k) || this.lastName.ToLower().Contains(k))
                     {
                         ++count;
                         continue;
