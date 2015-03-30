@@ -56,6 +56,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="100">
                     <ItemsControl x:Name="ExamDateItemsControl" ItemsSource="{Binding Path=exam}">
@@ -76,7 +77,9 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
-                <Button x:Name="AddExamButton" Content="Prüfung hinzufügen" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Command="{Binding addExamDate, Mode=Default}"/>
+                <Label Content="Vorhandene Prüfung wählen:" Grid.Column="0" Grid.Row="1"/>
+                <ComboBox ItemBindingGroup="{Binding}" SelectedItem="{Binding}" Grid.Column="3" Grid.Row="1" Width="130" HorizontalAlignment="Right"/>
+                <Button x:Name="AddExamButton" Content="Prüfung hinzufügen" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Command="{Binding addExamDate, Mode=Default}"/>
             </Grid>
         </Expander>
         <Expander Header="Lehrgänge" Margin="10,1,20,1" Grid.Row="3">
@@ -104,7 +107,7 @@
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </ScrollViewer>
-                <Button x:Name="AddSeminarButton" Content="Lehrgang hinzufügen" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" Command="{Binding addSeminarDate, Mode=Default}"/>
+                <Button x:Name="AddSeminarButton" Content="Lehrgang hinzufügen" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Command="{Binding addSeminarDate, Mode=Default}"/>
             </Grid>
         </Expander>
         <Button HorizontalAlignment="Right" Margin="0,0,259,1" VerticalAlignment="Bottom" Width="75" Command="{Binding saveCommand, Mode=Default}" Height="22" Content="Speichern" Grid.Row="4"/>
