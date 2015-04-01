@@ -86,7 +86,33 @@
             SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
             command.ExecuteNonQuery();
 
+            sql = @"select last_insert_rowid()";
+            command = new SQLiteCommand(sql, DatabaseConnection.instance);
+            long memberId = (long)command.ExecuteScalar();
+
+            string convertedDate;
             foreach (DateItem exam in member.exam)
+            {
+                convertedDate = convertDate(exam.date);
+                sql = "insert into exam(date) select " + convertedDate + " where not EXISTS(SELECT 1 FROM exam WHERE date =  " + convertedDate + ");";
+                command = new SQLiteCommand(sql, DatabaseConnection.instance);
+                command.ExecuteNonQuery();
+
+                sql = "select rowid from exam where date = " + convertedDate + ";";
+                command = new SQLiteCommand(sql, DatabaseConnection.instance);
+                SQLiteDataReader reader = command.ExecuteReader();
+                int examId = new int();
+                while (reader.Read())
+                {
+                    examId = Convert.ToInt32(reader["rowid"]);
+                }
+
+                sql = "insert into member_exam(examid, memberid, description) select " + examId + ", " + memberId +", '" + exam.information + "';";
+                command = new SQLiteCommand(sql, DatabaseConnection.instance);
+                command.ExecuteNonQuery();
+            }
+
+            foreach (DateItem seminar in member.seminar)
             {
                 sql = "";
                 command = new SQLiteCommand(sql, DatabaseConnection.instance);
