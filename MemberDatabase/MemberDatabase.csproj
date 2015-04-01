@@ -113,6 +113,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Anniversary.cs" />
+    <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Model\Database.cs" />
     <Compile Include="Model\DatabaseConnection.cs" />
     <Compile Include="Model\DateItem.cs" />

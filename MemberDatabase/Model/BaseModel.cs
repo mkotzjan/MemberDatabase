@@ -8,7 +8,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    class BaseModel : INotifyPropertyChanged
+    public class BaseModel : INotifyPropertyChanged
     {
         public void RaisePropertyChanged(string prop)
         {
