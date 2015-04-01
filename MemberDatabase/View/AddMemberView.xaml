@@ -78,7 +78,7 @@
                     </ItemsControl>
                 </ScrollViewer>
                 <Label Content="Vorhandene Prüfung wählen:" Grid.Column="0" Grid.Row="1"/>
-                <ComboBox ItemBindingGroup="{Binding}" SelectedItem="{Binding}" Grid.Column="3" Grid.Row="1" Width="130" HorizontalAlignment="Right"/>
+                <ComboBox ItemBindingGroup="{Binding test}" SelectedItem="{Binding test}" Grid.Column="3" Grid.Row="1" Width="130" HorizontalAlignment="Right"/>
                 <Button x:Name="AddExamButton" Content="Prüfung hinzufügen" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Command="{Binding addExamDate, Mode=Default}"/>
             </Grid>
         </Expander>
