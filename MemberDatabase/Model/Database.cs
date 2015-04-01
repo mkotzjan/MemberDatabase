@@ -25,7 +25,7 @@
                 SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
                 command.ExecuteNonQuery();
 
-                sql = "create table exams (date integer, description text);";
+                sql = "create table exams (date integer);";
                 command = new SQLiteCommand(sql, DatabaseConnection.instance);
                 command.ExecuteNonQuery();
 
@@ -33,11 +33,11 @@
                 command = new SQLiteCommand(sql, DatabaseConnection.instance);
                 command.ExecuteNonQuery();
 
-                sql = "create table examconnection (examid integer, memberid integer);";
+                sql = "create table member_exam (examid integer, memberid integer, description text);";
                 command = new SQLiteCommand(sql, DatabaseConnection.instance);
                 command.ExecuteNonQuery();
 
-                sql = "create table seminarconnection (seminarid integer, memberid integer);";
+                sql = "create table member_seminar (seminarid integer, memberid integer);";
                 command = new SQLiteCommand(sql, DatabaseConnection.instance);
                 command.ExecuteNonQuery();
             }
@@ -123,7 +123,7 @@
                     command = new SQLiteCommand(sql, DatabaseConnection.instance);
                     long seminarId = (long)command.ExecuteScalar();
 
-                    sql = "insert into member_exam(examid, memberid, description) select " + seminarId + ", " + memberId + ", '" + seminar.information + "';";
+                    sql = "insert into member_seminar(seminarid, memberid) select " + seminarId + ", " + memberId + ";";
                     command = new SQLiteCommand(sql, DatabaseConnection.instance);
                     command.ExecuteNonQuery();
                 }
