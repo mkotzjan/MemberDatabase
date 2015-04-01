@@ -45,7 +45,10 @@
 
         public MemberList content()
         {
-            MemberList importedContend = new MemberList();
+
+            MemberList importedMember = new MemberList();
+            ExamList importedExam = new ExamList();
+            SeminarList importedSeminar = new SeminarList();
             string sql = "select rowid, firstname, lastname, strftime('%d.%m.%Y ', datetime(birthday, 'unixepoch')) as birthday,  strftime('%d.%m.%Y ', datetime(accession, 'unixepoch')) as accession, active, groupid, email, adress from members order by active desc, groupid asc, lastname asc, firstname asc;";
             SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
             SQLiteDataReader reader = command.ExecuteReader();
@@ -75,9 +78,9 @@
                 string adress = Convert.ToString(reader["adress"]);
                 member = new Member { firstName = firstName, lastName = lastName, birthday = birthday, accession = accession, active = active, group = group, email = email, adress = adress };
                 member.setID(id);
-                importedContend.Add(member);
+                importedMember.Add(member);
             }
-            return importedContend;
+            return importedMember;
         }
 
         public void add(Member member)

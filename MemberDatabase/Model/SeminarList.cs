@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MemberDatabase.Model
 {
-    class SeminarList : ObservableCollection<Member>
+    class SeminarList : ObservableCollection<Seminar>
     {
 
     }

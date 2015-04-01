@@ -11,7 +11,7 @@
     /// <summary>
     /// Represents a member
     /// </summary>
-    public class Member : INotifyPropertyChanged
+    public class Member : BaseModel
     {
         int _id;
 
@@ -275,12 +275,6 @@
             }
             return false;
         }
-
-        void RaisePropertyChanged(string prop)
-        {
-            if (this.PropertyChanged != null) { this.PropertyChanged(this, new PropertyChangedEventArgs(prop)); }
-        }
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public Member Clone()
         {
