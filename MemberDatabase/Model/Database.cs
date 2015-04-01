@@ -100,14 +100,9 @@
                     command = new SQLiteCommand(sql, DatabaseConnection.instance);
                     command.ExecuteNonQuery();
 
-                    sql = "select rowid from exam where date = " + convertedDate + ";";
+                    sql = @"select last_insert_rowid()";
                     command = new SQLiteCommand(sql, DatabaseConnection.instance);
-                    SQLiteDataReader reader = command.ExecuteReader();
-                    int examId = new int();
-                    while (reader.Read())
-                    {
-                        examId = Convert.ToInt32(reader["rowid"]);
-                    }
+                    long examId = (long)command.ExecuteScalar();
 
                     sql = "insert into member_exam(examid, memberid, description) select " + examId + ", " + memberId + ", '" + exam.information + "';";
                     command = new SQLiteCommand(sql, DatabaseConnection.instance);
@@ -117,9 +112,21 @@
 
             foreach (DateItem seminar in member.seminar)
             {
-                sql = "";
-                command = new SQLiteCommand(sql, DatabaseConnection.instance);
-                command.ExecuteNonQuery();
+                if (seminar.date != null)
+                {
+                    convertedDate = convertDate(seminar.date);
+                    sql = "insert into seminar(date, description) select " + convertedDate + ", '" + seminar.information + "' where not EXISTS(SELECT 1 FROM seminar WHERE date =  " + convertedDate + ");";
+                    command = new SQLiteCommand(sql, DatabaseConnection.instance);
+                    command.ExecuteNonQuery();
+
+                    sql = @"select last_insert_rowid()";
+                    command = new SQLiteCommand(sql, DatabaseConnection.instance);
+                    long seminarId = (long)command.ExecuteScalar();
+
+                    sql = "insert into member_exam(examid, memberid, description) select " + seminarId + ", " + memberId + ", '" + seminar.information + "';";
+                    command = new SQLiteCommand(sql, DatabaseConnection.instance);
+                    command.ExecuteNonQuery();
+                }
             }
         }
 
