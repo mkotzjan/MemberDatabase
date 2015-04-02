@@ -82,7 +82,7 @@
                 importedMember.Add(member);
             }
 
-            sql = "select rowid, strftime('%d.%m.%Y ', datetime(date, 'unixepoch')) as date from exam order by date asc;";
+            sql = "select rowid, strftime('%d.%m.%Y ', datetime(date, 'unixepoch')) as date from exam order by datetime(date, 'unixepoch') asc;";
             command = new SQLiteCommand(sql, DatabaseConnection.instance);
             reader = command.ExecuteReader();
             DateItem exam;
@@ -100,7 +100,7 @@
                 importedExam.Add(exam);
             }
 
-            sql = "select rowid, strftime('%d.%m.%Y ', datetime(date, 'unixepoch')) as date, description from seminar order by date asc;";
+            sql = "select rowid, strftime('%d.%m.%Y ', datetime(date, 'unixepoch')) as date, description from seminar order by datetime(date, 'unixepoch') asc;";
             command = new SQLiteCommand(sql, DatabaseConnection.instance);
             reader = command.ExecuteReader();
             DateItem seminar;
