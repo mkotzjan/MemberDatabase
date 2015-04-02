@@ -100,6 +100,25 @@
                 importedExam.Add(exam);
             }
 
+            sql = "select rowid, strftime('%d.%m.%Y ', datetime(date, 'unixepoch')) as date, description from seminar order by date asc;";
+            command = new SQLiteCommand(sql, DatabaseConnection.instance);
+            reader = command.ExecuteReader();
+            DateItem seminar;
+
+            while (reader.Read())
+            {
+                int id = Convert.ToInt32(reader["rowid"]);
+
+                DateTime? date = null;
+                if (reader["date"] != DBNull.Value)
+                {
+                    date = Convert.ToDateTime(reader["date"]);
+                }
+                string description = Convert.ToString(reader["description"]);
+                seminar = new DateItem(id, date, description);
+                importedSeminar.Add(seminar);
+            }
+
             Tuple<MemberList, DateList, DateList> imported = new Tuple<MemberList, DateList, DateList>(importedMember, importedExam, importedSeminar);
             return imported;
         }

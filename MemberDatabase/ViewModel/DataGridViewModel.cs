@@ -273,6 +273,7 @@ using System.ComponentModel;
             importedContent = this.db.content();
             this.members = this.importedContent.Item1;
             this.exam = this.importedContent.Item2;
+            this.seminar = this.importedContent.Item3;
             memberView = CollectionViewSource.GetDefaultView(members);
             group();
             List<Member> memberCopy = new List<Member>();

@@ -101,6 +101,13 @@ namespace MemberDatabase.Model
             information = string.Empty;
         }
 
+        public DateItem(int ID, DateTime? dateTime, string info)
+        {
+            id = ID;
+            date = dateTime;
+            information = info;
+        }
+
         public DateItem(int ID, int memberId, DateTime? dateTime)
         {
             id = ID;
