@@ -272,6 +272,7 @@ using System.ComponentModel;
             search = string.Empty;
             importedContent = this.db.content();
             this.members = this.importedContent.Item1;
+            this.exam = this.importedContent.Item2;
             memberView = CollectionViewSource.GetDefaultView(members);
             group();
             List<Member> memberCopy = new List<Member>();
