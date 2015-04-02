@@ -16,6 +16,10 @@ using System.ComponentModel;
     {
         private MemberList membersP;
         private ICollectionView memberViewP;
+        private DateList examP;
+        private DateList seminarP;
+        private ICollectionView examViewP;
+        private ICollectionView seminarViewP;
         private List<string> anniversaryP;
         private List<string> birthdayP;
         private List<string> anniversaryTooltipP;
@@ -25,6 +29,7 @@ using System.ComponentModel;
         private bool groupByGroups;
         private Database db;
         private Anniversary an;
+        private Tuple<MemberList, DateList, DateList> importedContent;
 
         public MemberList members
         { 
@@ -197,7 +202,8 @@ using System.ComponentModel;
         public void loadDataBase()
         {
             search = string.Empty;
-            this.members = this.db.content();
+            importedContent = this.db.content();
+            this.members = this.importedContent.Item1;
             memberView = CollectionViewSource.GetDefaultView(members);
             group();
             List<Member> memberCopy = new List<Member>();
