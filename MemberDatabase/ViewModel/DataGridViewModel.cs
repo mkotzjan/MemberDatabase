@@ -66,6 +66,24 @@ using System.ComponentModel;
                 }
             }
         }
+
+        public DateList seminar
+        {
+            get
+            {
+                return seminarP;
+            }
+
+            set
+            {
+                if (value != seminarP)
+                {
+                    seminarP = value;
+                    RaisePropertyChanged("seminar");
+                    seminarView = CollectionViewSource.GetDefaultView(seminar);
+                }
+            }
+        }
         public List<string> anniversary
         { 
             get
@@ -219,6 +237,22 @@ using System.ComponentModel;
                 {
                     examViewP = value;
                     RaisePropertyChanged("examView");
+                }
+            }
+        }
+
+        public ICollectionView seminarView
+        {
+            get
+            {
+                return seminarViewP;
+            }
+            set
+            {
+                if (value != seminarViewP)
+                {
+                    seminarViewP = value;
+                    RaisePropertyChanged("seminarView");
                 }
             }
         }
