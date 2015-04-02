@@ -43,14 +43,17 @@
             }
         }
 
-        public MemberList content()
+        public Tuple<MemberList, DateList, DateList> content()
         {
-
             MemberList importedMember = new MemberList();
+            DateList importedExam = new DateList();
+            DateList importedSeminar = new DateList();
+
             string sql = "select rowid, firstname, lastname, strftime('%d.%m.%Y ', datetime(birthday, 'unixepoch')) as birthday,  strftime('%d.%m.%Y ', datetime(accession, 'unixepoch')) as accession, active, groupid, email, adress from members order by active desc, groupid asc, lastname asc, firstname asc;";
             SQLiteCommand command = new SQLiteCommand(sql, DatabaseConnection.instance);
             SQLiteDataReader reader = command.ExecuteReader();
             Member member;
+
             while (reader.Read())
             {
                 int id = Convert.ToInt32(reader["rowid"]);
@@ -78,7 +81,8 @@
                 member.setID(id);
                 importedMember.Add(member);
             }
-            return importedMember;
+            Tuple<MemberList, DateList, DateList> imported = new Tuple<MemberList, DateList, DateList>(importedMember, importedExam, importedSeminar);
+            return imported;
         }
 
         public void add(Member member)
