@@ -181,7 +181,7 @@
                         <ColumnDefinition Width="250"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid Grid.Column="1">
+                    <DataGrid Grid.Column="1" ItemsSource="{Binding Path=examView}" AutoGenerateColumns="True">
                         
                     </DataGrid>
                 </Grid>
@@ -192,7 +192,7 @@
                         <ColumnDefinition Width="250"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid Grid.Column="1">
+                    <DataGrid Grid.Column="1" ItemsSource="{Binding Path=seminarView}" AutoGenerateColumns="True">
 
                     </DataGrid>
                 </Grid>
