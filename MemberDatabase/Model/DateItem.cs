@@ -93,5 +93,21 @@ namespace MemberDatabase.Model
             date = null;
             information = string.Empty;
         }
+
+        public DateItem(int ID, int memberId, DateTime? dateTime)
+        {
+            id = ID;
+            memberID = memberId;
+            date = dateTime;
+            information = string.Empty;
+        }
+
+        public DateItem(int ID, int memberId, DateTime? dateTime, string info)
+        {
+            id = ID;
+            memberID = memberId;
+            date = dateTime;
+            information = info;
+        }
     }
 }
