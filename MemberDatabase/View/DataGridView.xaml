@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:MemberDatabase.ViewModel" 
         xmlns:m="clr-namespace:MemberDatabase.Model"
+        xmlns:addcntrl="clr-namespace:MemberDatabase.View"
         xmlns:Properties="clr-namespace:MemberDatabase.Properties" x:Class="MemberDatabase.DataGridView"
         Title="MemberDatabase" Height="575.2" Width="525" WindowState="Maximized"
         DataContext="{DynamicResource DataGridViewModel}">
@@ -174,6 +175,7 @@
                             </Grid>
                         </GroupBox>
                     </Grid>
+                    <addcntrl:AddMemberControl Grid.Column="2"/>
                 </Grid>
             </TabItem>
             <TabItem Header="Prüfungen">
