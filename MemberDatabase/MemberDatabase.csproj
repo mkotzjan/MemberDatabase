@@ -100,6 +100,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="View\AddMemberControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AddMemberView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,6 +132,9 @@
     <Compile Include="ViewModel\AddMemberViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\DataGridViewModel.cs" />
+    <Compile Include="View\AddMemberControl.xaml.cs">
+      <DependentUpon>AddMemberControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AddMemberView.xaml.cs">
       <DependentUpon>AddMemberView.xaml</DependentUpon>
     </Compile>
