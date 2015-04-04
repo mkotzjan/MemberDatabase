@@ -32,6 +32,8 @@ namespace MemberDatabase.ViewModel
         private string addressP;
 
         private ICommand saveCommandP;
+        private ICommand addCommandP;
+        private ICommand clearCommandP;
         private ICommand addExamDateP;
         private ICommand addSeminarDateP;
         private ICommand deleteExamCommandP;
@@ -146,15 +148,15 @@ namespace MemberDatabase.ViewModel
             }
         }
 
-        public ICommand saveCommand
+        public ICommand addCommand
         {
             get
             {
-                if (this.saveCommandP == null)
+                if (this.addCommandP == null)
                 {
-                    this.saveCommandP = new RelayCommand(param => this.saveMember());
+                    this.addCommandP = new RelayCommand(param => this.addMember());
                 }
-                return this.saveCommandP;
+                return this.addCommandP;
             }
         }
 
@@ -300,7 +302,7 @@ namespace MemberDatabase.ViewModel
             }
         }
 
-        private void saveMember()
+        private void addMember()
         {
             Member member = new Member { firstName = firstNameP, lastName = lastNameP, birthday = birthdayP, accession = accessionP, active = activeP, group = selectedGroupP, email = emailP, adress = addressP, exam = examListP, seminar = seminarListP };
             db.add(member);
