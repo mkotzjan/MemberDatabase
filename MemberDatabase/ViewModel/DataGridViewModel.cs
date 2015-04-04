@@ -30,6 +30,7 @@ using System.ComponentModel;
         private Database db;
         private Anniversary an;
         private Tuple<MemberList, DateList, DateList> importedContent;
+        private static Member selectedMemberP;
 
         public MemberList members
         { 
@@ -253,6 +254,22 @@ using System.ComponentModel;
                 {
                     seminarViewP = value;
                     RaisePropertyChanged("seminarView");
+                }
+            }
+        }
+
+        public static Member selectedMember
+        {
+            get
+            {
+                return selectedMemberP;
+            }
+
+            set
+            {
+                if (value != selectedMemberP)
+                {
+                    selectedMemberP = value;
                 }
             }
         }

@@ -60,7 +60,7 @@
                         <ColumnDefinition/>
                         <ColumnDefinition Width="350"/>
                     </Grid.ColumnDefinitions>
-                    <DataGrid Grid.Column="1" Margin="1" ItemsSource="{Binding Path=memberView}" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" CanUserAddRows="false" IsReadOnly="{Binding readOnly}" HeadersVisibility="Column" RowHeaderWidth="0" Background="White" BorderBrush="{x:Null}">
+                    <DataGrid Grid.Column="1" Margin="1" ItemsSource="{Binding Path=memberView}" AutoGenerateColumns="True" AutoGeneratingColumn="DataGrid_AutoGeneratingColumn" CanUserAddRows="false" IsReadOnly="{Binding readOnly}" HeadersVisibility="Column" RowHeaderWidth="0" Background="White" BorderBrush="{x:Null}" SelectedItem="{Binding Path=selectedMember}">
                         <DataGrid.GroupStyle>
                             <GroupStyle>
                                 <GroupStyle.ContainerStyle>
