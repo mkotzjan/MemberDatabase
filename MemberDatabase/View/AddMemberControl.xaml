@@ -113,7 +113,7 @@
             </Grid>
         </Expander>
         <Button HorizontalAlignment="Right" Margin="0,0,259,1" VerticalAlignment="Bottom" Width="75" Command="{Binding saveCommand, Mode=Default}" Height="22" Content="Speichern" Grid.Row="4"/>
-        <Button Content="Speichern und Schließen" HorizontalAlignment="Right" Margin="0,0,115,1" VerticalAlignment="Bottom" Width="139" Command="{Binding saveCommand, Mode=Default}" Height="22" Grid.Row="4"/>
-        <Button Content="Abbrechen" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="0,0,20,1" Grid.Row="4" Height="22" IsCancel="True"/>
+        <Button Content="Hinzufügen" HorizontalAlignment="Right" Margin="0,0,115,1" VerticalAlignment="Bottom" Width="139" Command="{Binding addCommand, Mode=Default}" Height="22" Grid.Row="4"/>
+        <Button Content="Leeren" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="0,0,20,1" Grid.Row="4" Height="22" Command="{Binding clearCommand}"/>
     </Grid>
 </UserControl>
