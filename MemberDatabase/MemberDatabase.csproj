@@ -125,6 +125,7 @@
     <Compile Include="Model\GroupingConverter.cs" />
     <Compile Include="Model\Member.cs" />
     <Compile Include="Model\MemberList.cs" />
+    <Compile Include="Model\ObjectConnector.cs" />
     <Compile Include="Model\RelayCommand.cs" />
     <Compile Include="UnitTests\TestAnniversary.cs" />
     <Compile Include="UnitTests\TestDateItem.cs" />
