@@ -326,6 +326,13 @@ namespace MemberDatabase.ViewModel
             db.add(member);
         }
 
+        private void updateMember()
+        {
+            Member member = new Member { firstName = firstNameP, lastName = lastNameP, birthday = birthdayP, accession = accessionP, active = activeP, group = selectedGroupP, email = emailP, adress = addressP, exam = examListP, seminar = seminarListP };
+            /// member.setID = ...
+            // db.update(member);
+        }
+
         private void addExam()
         {
             if (examListP[examListP.Count - 1].date != null)
