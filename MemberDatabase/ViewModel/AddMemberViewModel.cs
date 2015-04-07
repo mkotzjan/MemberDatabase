@@ -38,6 +38,7 @@ namespace MemberDatabase.ViewModel
         private ICommand addSeminarDateP;
         private ICommand deleteExamCommandP;
         private ICommand deleteSeminarCommandP;
+        private string memberButtonP;
         private Database db;
 
         /// <summary>
@@ -302,6 +303,23 @@ namespace MemberDatabase.ViewModel
             }
         }
 
+        public string memberButton
+        {
+            get
+            {
+                return memberButtonP;
+            }
+
+            set
+            {
+                if (value != memberButtonP)
+                {
+                    memberButtonP = value;
+                    RaisePropertyChanged("memberButton");
+                }
+            }
+        }
+
         private void addMember()
         {
             Member member = new Member { firstName = firstNameP, lastName = lastNameP, birthday = birthdayP, accession = accessionP, active = activeP, group = selectedGroupP, email = emailP, adress = addressP, exam = examListP, seminar = seminarListP };
@@ -343,6 +361,7 @@ namespace MemberDatabase.ViewModel
             seminar = new ObservableCollection<DateItem>();
             seminar.Add(new DateItem());
             selected = 0;
+            memberButton = "Hinzufügen";
         }
     }
 }
