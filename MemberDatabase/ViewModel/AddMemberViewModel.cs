@@ -155,7 +155,14 @@ namespace MemberDatabase.ViewModel
             {
                 if (this.addCommandP == null)
                 {
-                    this.addCommandP = new RelayCommand(param => this.addMember());
+                    if (this.memberButtonP == "Hinzufügen")
+                    {
+                        this.addCommandP = new RelayCommand(param => this.addMember());
+                    }
+                    else
+                    {
+                        this.addCommandP = new RelayCommand(param => this.updateMember());
+                    }
                 }
                 return this.addCommandP;
             }
