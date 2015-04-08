@@ -22,3 +22,5 @@ C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\MemberDatabase.csproj.GenerateResource.Cache
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\MemberDatabase.exe
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\MemberDatabase.pdb
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\ViewModel\MainWindow.baml
+C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\obj\x86\Debug\ViewModel\MainWindow.g.cs
