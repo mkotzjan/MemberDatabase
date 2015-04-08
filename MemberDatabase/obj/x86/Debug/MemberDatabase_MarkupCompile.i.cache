@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Michael\Documents\Projekte\MemberDatabase\MemberDatabase\App.xaml
-31430060731
+42138115383
 
-28-2145246889
+291137950854
 19-80532570
-View\AddMemberControl.xaml;View\AddMemberView.xaml;View\DataGridView.xaml;
+ViewModel\MainWindow.xaml;View\AddMemberControl.xaml;View\AddMemberView.xaml;View\DataGridView.xaml;
 
 False
 
