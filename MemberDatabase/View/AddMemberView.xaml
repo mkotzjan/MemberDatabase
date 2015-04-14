@@ -1,0 +1,117 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="clr-namespace:MemberDatabase.ViewModel" 
+        xmlns:Properties="clr-namespace:MemberDatabase.Properties" x:Class="MemberDatabase.View.AddMemberView"
+        Title="Mitglied hinzufügen" Height="329" Width="350" ResizeMode="NoResize"
+        DataContext="{DynamicResource AddMemberViewModel}" SizeToContent="Height">
+    <Window.Resources>
+        <vm:AddMemberViewModel x:Key="AddMemberViewModel"/>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="157"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="40*"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="0,6,20,1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Content="Vorname:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="26" Width="61"/>
+            <Label Content="Nachname:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="26" Width="70" Grid.Row="1"/>
+            <Label Content="Geburtsdatum:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="2" Height="26" Width="86"/>
+            <Label Content="Beitrittsdatum:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="3" Height="26" Width="85"/>
+            <Label Content="Gruppe:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Grid.Row="4" Height="26"/>
+            <Label Content="Aktiv:" Margin="10,0,0,0" Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Top" Width="78"/>
+            <Label Content="E-Mail:" Margin="10,0,0,0" Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <TextBox x:Name="firstNameBox" Grid.Column="1" TextWrapping="Wrap" MaxLines="1" Margin="1" Text="{Binding Path=firstName, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBox x:Name="lastNameBox" Grid.Column="1" TextWrapping="Wrap" Grid.Row="1" MaxLines="1" Margin="1" Text="{Binding Path=lastName}"/>
+            <DatePicker Grid.Column="1" Margin="1" Grid.Row="2" SelectedDate="{Binding Path=birthday}"/>
+            <DatePicker Grid.Column="1" Margin="1" Grid.Row="3" SelectedDate="{Binding Path=accession}"/>
+            <ComboBox x:Name="groupComboBox" Grid.Column="1" Margin="1" Grid.Row="4" HorizontalAlignment="Left" SelectedIndex="{Binding Path=selected}">
+                <ComboBoxItem Content="Erwachsene"/>
+                <ComboBoxItem Content="Kinder"/>
+            </ComboBox>
+            <CheckBox Grid.Column="1" Margin="1,5,0,5" Grid.Row="5" HorizontalAlignment="Left" Width="15" Height="15" IsChecked="{Binding Path=active}"/>
+            <TextBox x:Name="emailBox" Grid.Column="1" Grid.Row="6" TextWrapping="Wrap" MaxLines="1" Margin="1" Text="{Binding Path=email}"/>
+        </Grid>
+        <Expander Header="Adresse" Margin="10,1,20,1" Grid.Row="1">
+            <TextBox x:Name="adressBox" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" MaxHeight="80" AcceptsReturn="True" MinHeight="50" Text="{Binding Path=address}"/>
+        </Expander>
+        <Expander Header="Prüfungen" Margin="10,1,20,1" Grid.Row="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="100">
+                    <ItemsControl x:Name="ExamDateItemsControl" ItemsSource="{Binding Path=exam}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Button Content="X" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}, Path=DataContext.deleteExamCommand}" CommandParameter="{Binding}" Grid.Column="0" Margin="40,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                    <DatePicker Grid.Column="1" SelectedDate="{Binding date}" Margin="1"/>
+                                    <TextBox Text="{Binding information}" Grid.Column="2" Margin="1" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+                <Label Content="Vorhandene Prüfung wählen:" Grid.Column="0" Grid.Row="1"/>
+                <ComboBox ItemBindingGroup="{Binding test}" SelectedItem="{Binding test}" Grid.Column="3" Grid.Row="1" Width="130" HorizontalAlignment="Right"/>
+                <Button x:Name="AddExamButton" Content="Prüfung hinzufügen" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Command="{Binding addExamDate, Mode=Default}"/>
+            </Grid>
+        </Expander>
+        <Expander Header="Lehrgänge" Margin="10,1,20,1" Grid.Row="3">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <ScrollViewer VerticalScrollBarVisibility="Auto" MaxHeight="100">
+                    <ItemsControl x:Name="SeminarDateItemsControl" ItemsSource="{Binding Path=seminar}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Grid Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Button Content="X" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}, Path=DataContext.deleteSeminarCommand}" CommandParameter="{Binding}" Grid.Column="0" Margin="40,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                    <DatePicker Grid.Column="1" SelectedDate="{Binding date}" Margin="1"/>
+                                    <TextBox Text="{Binding information}" Grid.Column="2" Margin="1" TextWrapping="Wrap" Grid.ColumnSpan="2"/>
+                                </Grid>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+                <Button x:Name="AddSeminarButton" Content="Lehrgang hinzufügen" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" Command="{Binding addSeminarDate, Mode=Default}"/>
+            </Grid>
+        </Expander>
+        <Button HorizontalAlignment="Right" Margin="0,0,259,1" VerticalAlignment="Bottom" Width="75" Command="{Binding saveCommand, Mode=Default}" Height="22" Content="Speichern" Grid.Row="4"/>
+        <Button Content="Speichern und Schließen" HorizontalAlignment="Right" Margin="0,0,115,1" VerticalAlignment="Bottom" Width="139" Command="{Binding saveCommand, Mode=Default}" Height="22" Grid.Row="4"/>
+        <Button Content="Abbrechen" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Margin="0,0,20,1" Grid.Row="4" Height="22" IsCancel="True"/>
+    </Grid>
+</Window>
